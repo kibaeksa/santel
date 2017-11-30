@@ -30,7 +30,7 @@ gulp.task('webpack',function(){
 });
 
 gulp.task('watch' , function(){
-  gulp.watch('./src/sass/*.scss', ['sass']);
+  gulp.watch('./src/sass/**/*.scss', ['sass']);
   gulp.watch('./src/js/**/*.js',['webpack'])
 });
 
