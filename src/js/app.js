@@ -3,8 +3,9 @@ import Router from './utils/router';
 import mainUI from './ui/index';
 import worksListUI from './ui/worksList';
 import workViewUI from './ui/workView'
+import aboutUI from './ui/about'
 
-let currentState;
+let currentState = undefined;
 let renderTimer;
 const rootElem = document.getElementById('contents');
 
@@ -25,22 +26,28 @@ const getFilteredHash = (str = window.hash) => {
 };
 
 const getObjectByCategory = name => {
-    let result;
-    switch(currentState){
-        case 'workslist' :
-            result = worksListUI;
-            break;
-        case 'worksview' :
-            result = workViewUI;
-            break;
-        case 'index' :
-            result = mainUI;
-            break;
-        default:
-            break;
+    if(name != undefined){
+        let result;
+        switch(currentState){
+            case 'workslist' :
+                result = worksListUI;
+                break;
+            case 'worksview' :
+                result = workViewUI;
+                break;
+            case 'index' :
+                result = mainUI;
+                break;
+            case 'about' :
+                result = aboutUI;
+            default:
+                break;
+        }
+
+        return result;
     }
 
-    return result;
+
 };
 
 const destroy = () =>{
@@ -51,6 +58,7 @@ const destroy = () =>{
 };
 
 const setGnbButton = ctgrName => {
+    console.log(ctgrName);
     let targetElem;
     switch(ctgrName){
         case 'index' :
@@ -61,12 +69,15 @@ const setGnbButton = ctgrName => {
             targetElem = document.getElementById('gnb-button-works');
             break;
         case 'about' :
+            console.log(11);
             targetElem = document.getElementById('gnb-button-about');
             break;
         case 'culture' :
             targetElem = document.getElementById('gnb-button-culture');
             break;
     }
+
+    console.log(targetElem);
 
     if(targetElem){
         [...document.querySelectorAll('#gnb-menu .main-menu li')].map(liElem => {
@@ -79,6 +90,7 @@ const setGnbButton = ctgrName => {
 const render = () => {
     let renderData;
     const hashData = getFilteredHash(window.location.hash);
+    // destroy();
     switch(hashData.name){
         case 'works' :
             currentState = 'works';
@@ -89,6 +101,13 @@ const render = () => {
                 currentState += 'view'
                 renderData = workViewUI.render(ContentsData , hashData);
             }
+            break;
+        case 'about' :
+            currentState = 'about';
+            renderData = aboutUI.render(ContentsData);
+            break;
+        case 'culture' :
+            currentState = 'culture';
             break;
         case 'index' :
             currentState = 'index';
@@ -158,4 +177,13 @@ const handleGlobalNav = () => {
         });
     });
 
+    document.querySelector('#header h1 a').addEventListener('click', event => {
+        if(currentState == 'index'){
+            return;
+        }
+
+        window.location.hash = event.currentTarget.dataset.href;
+
+
+    });
 })();

@@ -94,6 +94,22 @@ html{
         transition:transform 0.6s 0s cubic-bezier(.82,.2,0,.85);
         -webkit-transition:-webkit-transform 0.6s 0s cubic-bezier(.82,.2,0,.85);
         overflow: hidden;
+
+        .container{
+            >.view-map{
+                padding: 1.3rem 0;
+                display: block;
+                text-align: center;
+                margin: 6rem 1.5rem 0;
+                border: 1px solid  #9e8e68;
+                font:500 2rem/2rem 'Open Sans';
+                display: none;
+                color: #9e8e68;
+                letter-spacing: 5px;
+            }
+        }
+
+
     }
 
     ul.main-menu{
@@ -161,7 +177,7 @@ html{
             margin-bottom: 27px;
             dt{
                 margin-bottom: 12px;
-                font:600 16px/16px 'Open Sans';
+                font:700 16px/16px 'Open Sans Condensed';
                 color: #aaa;
                 text-transform: uppercase;
             }
@@ -169,12 +185,13 @@ html{
             dd{
                 .desc{
                     color: #fff;
-                    font:300 12px/18px 'Open Sans';
+                    font:700 12px/18px 'Open Sans Condensed';
                     text-transform: uppercase;
+                    letter-spacing: 1px;
                 }
 
                 a{
-                    font:300 12px/12px 'Open Sans';
+                    font:300 12px/12px 'Open Sans Condensed';
                     color: #fff;
                 }
 
@@ -187,6 +204,7 @@ html{
 
                 .link{
                     color: #9e8e68;
+                    letter-spacing: 1px;
                 }
             }
 
@@ -198,6 +216,9 @@ html{
                 li{
                     margin-bottom: 5px;
                     text-transform: uppercase;
+                    a{
+                        font-weight: 700;
+                    }
                 }
             }
         }
@@ -363,7 +384,7 @@ html{
 
     h2{
         padding: 90px 0;
-        font:500 16px/16px 'Open Sans';
+        font:700 20px/20px 'Open Sans Condensed';
         text-align: center;
         letter-spacing: 10px;
     }
@@ -378,8 +399,8 @@ html{
         // overflow: hidden;
         cursor: pointer;
         opacity: 0;
-        transition:all 0.5s;
-        -webkit-transition:all 0.5s;
+        transition:opacity 0.5s , transform 0.5s;
+        -webkit-transition:opacity 0.5s , -webkit-transform 0.5s;
         transform:translate3d(0,40px,0);
         -webkit-transform:translate3d(0,40px,0);
 

@@ -1,4 +1,10 @@
 const callback = () => {
+
+    window.addEventListener('resize' , event => {
+        document.getElementById('main-video').style.width = `${window.innerWidth}px`;
+        document.getElementById('main-video').style.height = `${window.innerHeight}px`;
+    });
+
     setTimeout(() => {
         document.getElementsByTagName('html')[0].classList.add('main-page');
         document.querySelector('.main').classList.add('loaded');

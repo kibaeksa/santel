@@ -126,11 +126,15 @@ var _workView = __webpack_require__(6);
 
 var _workView2 = _interopRequireDefault(_workView);
 
+var _about = __webpack_require__(7);
+
+var _about2 = _interopRequireDefault(_about);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var currentState = void 0;
+var currentState = undefined;
 var renderTimer = void 0;
 var rootElem = document.getElementById('contents');
 
@@ -153,22 +157,26 @@ var getFilteredHash = function getFilteredHash() {
 };
 
 var getObjectByCategory = function getObjectByCategory(name) {
-    var result = void 0;
-    switch (currentState) {
-        case 'workslist':
-            result = _worksList2.default;
-            break;
-        case 'worksview':
-            result = _workView2.default;
-            break;
-        case 'index':
-            result = _index2.default;
-            break;
-        default:
-            break;
-    }
+    if (name != undefined) {
+        var result = void 0;
+        switch (currentState) {
+            case 'workslist':
+                result = _worksList2.default;
+                break;
+            case 'worksview':
+                result = _workView2.default;
+                break;
+            case 'index':
+                result = _index2.default;
+                break;
+            case 'about':
+                result = _about2.default;
+            default:
+                break;
+        }
 
-    return result;
+        return result;
+    }
 };
 
 var destroy = function destroy() {
@@ -179,6 +187,7 @@ var destroy = function destroy() {
 };
 
 var setGnbButton = function setGnbButton(ctgrName) {
+    console.log(ctgrName);
     var targetElem = void 0;
     switch (ctgrName) {
         case 'index':
@@ -189,12 +198,15 @@ var setGnbButton = function setGnbButton(ctgrName) {
             targetElem = document.getElementById('gnb-button-works');
             break;
         case 'about':
+            console.log(11);
             targetElem = document.getElementById('gnb-button-about');
             break;
         case 'culture':
             targetElem = document.getElementById('gnb-button-culture');
             break;
     }
+
+    console.log(targetElem);
 
     if (targetElem) {
         [].concat(_toConsumableArray(document.querySelectorAll('#gnb-menu .main-menu li'))).map(function (liElem) {
@@ -207,6 +219,7 @@ var setGnbButton = function setGnbButton(ctgrName) {
 var render = function render() {
     var renderData = void 0;
     var hashData = getFilteredHash(window.location.hash);
+    // destroy();
     switch (hashData.name) {
         case 'works':
             currentState = 'works';
@@ -217,6 +230,13 @@ var render = function render() {
                 currentState += 'view';
                 renderData = _workView2.default.render(_data2.default, hashData);
             }
+            break;
+        case 'about':
+            currentState = 'about';
+            renderData = _about2.default.render(_data2.default);
+            break;
+        case 'culture':
+            currentState = 'culture';
             break;
         case 'index':
             currentState = 'index';
@@ -281,6 +301,14 @@ var handleGlobalNav = function handleGlobalNav() {};
                 }, 200);
             }, 550);
         });
+    });
+
+    document.querySelector('#header h1 a').addEventListener('click', function (event) {
+        if (currentState == 'index') {
+            return;
+        }
+
+        window.location.hash = event.currentTarget.dataset.href;
     });
 })();
 
@@ -431,6 +459,12 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var callback = function callback() {
+
+    window.addEventListener('resize', function (event) {
+        document.getElementById('main-video').style.width = window.innerWidth + 'px';
+        document.getElementById('main-video').style.height = window.innerHeight + 'px';
+    });
+
     setTimeout(function () {
         document.getElementsByTagName('html')[0].classList.add('main-page');
         document.querySelector('.main').classList.add('loaded');
@@ -649,6 +683,24 @@ exports.default = {
         };
     },
     destroy: function destroy() {}
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    render: function render() {
+        return {
+            htmlString: "\n                <div class=\"about\" style=\"padding-top:120px;text-align:center;\">\n                    <h2>ABOUT</h2>\n                </div>"
+        };
+    }
 };
 
 /***/ })
