@@ -1,4 +1,4 @@
-const Data = [
+export default [
     {
         name : 'ADIDAS Online Store',
         title : '아디다스 공식 온라인 스토어',
@@ -168,4 +168,3 @@ const Data = [
         }
     }
 ];
-export default Data;
