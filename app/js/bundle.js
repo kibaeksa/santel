@@ -110,25 +110,25 @@ var _data = __webpack_require__(2);
 
 var _data2 = _interopRequireDefault(_data);
 
-var _router = __webpack_require__(3);
-
-var _router2 = _interopRequireDefault(_router);
-
-var _index = __webpack_require__(4);
+var _index = __webpack_require__(3);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _worksList = __webpack_require__(5);
+var _worksList = __webpack_require__(4);
 
 var _worksList2 = _interopRequireDefault(_worksList);
 
-var _workView = __webpack_require__(6);
+var _workView = __webpack_require__(5);
 
 var _workView2 = _interopRequireDefault(_workView);
 
-var _about = __webpack_require__(7);
+var _about = __webpack_require__(6);
 
 var _about2 = _interopRequireDefault(_about);
+
+var _culture = __webpack_require__(7);
+
+var _culture2 = _interopRequireDefault(_culture);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -139,8 +139,7 @@ var renderTimer = void 0;
 var rootElem = document.getElementById('contents');
 
 var getFilteredHash = function getFilteredHash() {
-    var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window.hash;
-
+    var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window.location.hash;
 
     var hashInfo = {};
     var arrayToHash = str.replace(/#\/?/, '').split('/');
@@ -171,6 +170,10 @@ var getObjectByCategory = function getObjectByCategory(name) {
                 break;
             case 'about':
                 result = _about2.default;
+                break;
+            case 'culture':
+                result = _culture2.default;
+                break;
             default:
                 break;
         }
@@ -322,7 +325,7 @@ var handleGlobalNav = function handleGlobalNav() {};
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var Data = [{
+exports.default = [{
     name: 'ADIDAS',
     title: 'ADIDAS Yeezy Boost',
     category: 'Design',
@@ -431,25 +434,9 @@ var Data = [{
         imgList: ['adidasstansmith-1.jpg', 'adidasstansmith-2.jpg', 'adidasstansmith-3.jpg', 'adidasstansmith-4.jpg']
     }
 }];
-exports.default = Data;
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Router;
-
-
-var Router = function Router() {};
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -518,7 +505,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -618,7 +605,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -686,6 +673,32 @@ exports.default = {
 };
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var callback = function callback() {
+    console.log('callback');
+};
+
+exports.default = {
+    render: function render() {
+        var htmlString = '\n            <div class="about" style="padding-top:120px;text-align:center;">\n                <h2>ABOUT</h2>\n            </div>\n        ';
+
+        return {
+            htmlString: htmlString,
+            callback: callback
+        };
+    },
+    destroy: function destroy() {}
+};
+
+/***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -698,7 +711,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     render: function render() {
         return {
-            htmlString: "\n                <div class=\"about\" style=\"padding-top:120px;text-align:center;\">\n                    <h2>ABOUT</h2>\n                </div>"
+            htmlString: "\n                <div class=\"about\" style=\"padding-top:120px;text-align:center;\">\n                    <h2>CULTURE</h2>\n                </div>"
         };
     }
 };

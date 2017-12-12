@@ -1,16 +1,15 @@
 import ContentsData from './data/data';
-import Router from './utils/router';
 import mainUI from './ui/index';
 import worksListUI from './ui/worksList';
 import workViewUI from './ui/workView'
 import aboutUI from './ui/about'
+import cultureUI from './ui/culture'
 
 let currentState = undefined;
 let renderTimer;
 const rootElem = document.getElementById('contents');
 
-const getFilteredHash = (str = window.hash) => {
-
+const getFilteredHash = (str = window.location.hash) => {
     const hashInfo = {};
     const arrayToHash = str.replace(/#\/?/,'').split('/');
 
@@ -40,14 +39,16 @@ const getObjectByCategory = name => {
                 break;
             case 'about' :
                 result = aboutUI;
+                break;
+            case 'culture' :
+                result = cultureUI;
+                break;
             default:
                 break;
         }
 
         return result;
     }
-
-
 };
 
 const destroy = () =>{

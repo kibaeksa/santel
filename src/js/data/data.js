@@ -1,4 +1,4 @@
-const Data = [
+export default [
     {
         name : 'ADIDAS',
         title : 'ADIDAS Yeezy Boost',
@@ -168,4 +168,3 @@ const Data = [
         }
     }
 ];
-export default Data;
