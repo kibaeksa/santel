@@ -1,3 +1,4 @@
+
 @import 'includes/reset.scss';
 @import 'includes/fonts.scss';
 @import 'includes/common.scss';
@@ -30,6 +31,7 @@ html{
     color: #000;
     font:300 22px/22px 'Noto Sans KR';
 }
+
 
 #wrapper{
     width: 100%;
@@ -324,6 +326,7 @@ html{
 }
 /* HEADER START END */
 
+/* index_main START */
 .main{
     width: 100%;
     position: relative;
@@ -364,6 +367,66 @@ html{
         }
     }
 
+    #main-text{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        span{
+            width: 40px;
+            height: 1px;
+            display: block;
+            margin: 25px auto;
+            background-color: #fff;
+        }
+
+        h6{
+            width: 100%;
+            height: auto;
+            font-family: 'Open Sans Condensed';
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h2{
+            width: 100%;
+            height: auto;
+            font-family: 'Open Sans';
+            font-size: 42px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+
+            &.pc-ver{
+                display: block;
+            }
+            &.tab-ver{
+                display: none;
+            }
+            &.mob-ver{
+                display: none;
+            }
+        }
+
+        a{
+            width: 250px;
+            height: 50px;
+            display: block;
+            margin: 55px auto 0;
+            border: 1px solid #fff;
+            box-sizing: border-box;
+            font-size: 16px;
+            line-height: 48px;
+            text-align: center;
+            color: #fff;
+        }
+
+    }
+
     &.loaded{
         #main-video{
             background: #141416;
@@ -374,6 +437,7 @@ html{
         opacity: 0;
     }
 }
+/* index_main END */
 
 
 
@@ -483,6 +547,17 @@ html{
     /* item END */
 }
 /* .main.item-wrapper END */
+
+
+/* AboutUs-detail START */
+.about-title-box{
+    width: 100%;
+    height: auto;
+    min-height: 930px;
+    
+}
+
+/* AboutUs-detail END */
 
 
 /* work-detail START */

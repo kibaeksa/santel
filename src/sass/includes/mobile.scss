@@ -2,6 +2,27 @@
     html{font-size:10px}
 }
 
+@media screen and (max-width: 480px){
+    .main #main-text{
+        h2{
+            font-size: 30px;
+            line-height: 40px;
+        }
+        a{
+            width: 200px;
+            height: 45px;
+            margin: 30px auto 0;
+            font-size: 14px;
+            line-height: 43px;
+        }
+        span{
+            margin: 15px auto;
+        }
+
+    }
+    /* index_main END */
+}
+
 @media screen and (min-width: 321px) and (max-width: 640px){
     html{font-size:11px}
 }
@@ -85,6 +106,22 @@
         }
     }
     /* gnb-menu END */
+
+    .main #main-text{
+        h2{
+            &.pc-ver{
+                display: none;
+            }
+            &.tab-ver{
+                display: block;
+            }
+            &.mob-ver{
+                display: none;
+            }
+
+        }
+    }
+    /* index_main END */
 
     .items-wrapper{
         padding:8rem 0 1.5rem;

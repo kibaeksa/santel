@@ -1,0 +1,123 @@
+// color setting
+$black : #292929;
+$white : #fff;
+$point : ;
+
+
+// font setting
+@mixin fontBN($s, $h, $t){
+    font-size: $s;
+    font-weight: normal;
+    line-height: $h;
+    text-align: $t;
+    color: $black;
+}
+//@include fontBN($s, $h, $t);
+
+@mixin fontBB($s, $h, $t){
+    font-size: $s;
+    font-weight: bold;
+    line-height: $h;
+    text-align: $t;
+    color: $black;
+}
+//@include fontBB($s, $h, $t);
+
+@mixin fontWN($s, $h, $t){
+    font-size: $s;
+    font-weight: normal;
+    line-height: $h;
+    text-align: $t;
+    color: $white;
+}
+//@include fontWN($s, $h, $t);
+
+@mixin fontWB($s, $h, $t){
+    font-size: $s;
+    font-weight: bold;
+    line-height: $h;
+    text-align: $t;
+    color: $white;
+}
+//@include fontWB($s, $h, $t);
+
+@mixin fontCN($s, $h, $t, $c){
+    font-size: $s;
+    font-weight: normal;
+    line-height: $h;
+    text-align: $t;
+    color: $c;
+}
+//@include fontCN($s, $h, $t, $c);
+
+@mixin fontCB($s, $h, $t, $c){
+    font-size: $s;
+    font-weight: bold;
+    line-height: $h;
+    text-align: $t;
+    color: $c;
+}
+//@include fontCB($s, $h, $t, $c);
+
+
+// bgi setting
+@mixin bgi_n_lt(){
+    background-size: cover;
+    background-position: left top;
+    backgroun-repeat: no-repeat;
+}
+//@include bgi_n_lt();
+
+@mixin bgi_n_cc(){
+    background-size: cover;
+    background-position: center center;
+    backgroun-repeat: no-repeat;
+}
+//@include bgi_n_cc();
+
+@mixin bgi_s($size, $position, $repeat){
+    background-size: $size;
+    background-position: $position;
+    backgroun-repeat: $repeat;
+}
+//@include bgi_s($size, $position, $repeat);
+
+
+//display setting
+@mixin parent_d(){
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+//@include parent_d();
+
+@mixin custum_d($width, $height){
+    width: $width;
+    height: $height;
+    display: block;
+}
+//@include custum_d($width, $height);
+
+
+//border setting
+@mixin border_B($bw){
+    border: $bw solid $black;
+}
+//@include border_B($bw);
+
+@mixin border_W($bw){
+    border: $bw solid $white;
+}
+//@include border_W($bw);
+
+@mixin border_C($bw, $color){
+    border: $bw solid $color;
+}
+//@include border_C($bw, $color);
+
+@mixin border_R($radius){
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -mos-border-radius: $radius;
+}
+//@include border_C($bw, $color);
