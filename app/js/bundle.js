@@ -60,111 +60,11 @@
 /******/ 	__webpack_require__.p = "/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _common = __webpack_require__(1);
-
-var _common2 = _interopRequireDefault(_common);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var callback = function callback() {
-    var itemElems = document.querySelectorAll('.items-wrapper .item');
-
-    [].concat(_toConsumableArray(itemElems)).map(function (item, index) {
-        item.addEventListener('click', handleClick);
-
-        item.querySelector('.img').addEventListener('mousemove', function (event) {
-            handleImageMove(item.querySelectorAll('.img img'), event);
-        });
-
-        item.querySelector('.img').addEventListener('mouseleave', function (event) {
-            handleImageOut(item.querySelectorAll('.img img'), event);
-        });
-
-        setTimeout(function () {
-            item.className += ' loaded';
-        }, index * 50);
-    });
-};
-
-var handleClick = function handleClick(event) {
-    // console.log(event.currentTarget.dataset.href);
-    window.location.href = event.currentTarget.dataset.href;
-};
-
-var handleImageMove = function handleImageMove(imgData, event) {
-    var length = imgData.length;
-    var width = event.currentTarget.clientWidth;
-    var unit = event.currentTarget.clientWidth / length;
-
-    var curIndex = Math.floor((event.clientX - event.currentTarget.getBoundingClientRect().left) / unit);
-    curIndex = curIndex < 0 ? 0 : curIndex;
-
-    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
-        if (index == curIndex) {
-            img.className = 'loaded active';
-        } else {
-            img.className = 'loaded';
-        }
-    });
-};
-
-var handleImageOut = function handleImageOut(imgData, event) {
-    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
-        if (index == 0) {
-            img.className = 'loaded active';
-        } else {
-            img.className = 'loaded';
-        }
-    });
-};
-
-exports.default = {
-    render: function render(contentsData, paramData) {
-        var htmlString = '';
-        /* List */
-        htmlString = '\n            <div class="items-wrapper container clearfix">\n                <h2>RECENT WORK</h2>\n        ';
-        var viewCol = 3;
-        contentsData.map(function (data, index) {
-            var itemColsOrder = Math.abs(index % viewCol);
-            var itemRowsOrder = Math.floor(index / viewCol);
-            var elemLink = _common2.default.getNameToLink(data.name);
-
-            htmlString += '\n                <div class="item" data-id="' + index + '" data-href="/#/works/' + elemLink + '">\n                    <div class="item-wrapper">\n                        <div class="img">\n                            ' + data.thumbnails.imgList.map(function (imgPath, index) {
-                return '<img src="' + (data.thumbnails.publicPath + imgPath) + '" ' + (index == 0 ? 'class="active"' : '') + ' alt="" />';
-            }).join('') + '\n                        </div>\n                        <div class="info">\n                            <h3>' + data.title + '</h3>\n                            <div class="date">' + data.date + '</div>\n                        </div>\n                    </div>\n\n                </div>\n            ';
-        });
-        htmlString += '</div>';
-
-        return {
-            htmlString: htmlString,
-            callback: callback
-        };
-    },
-    destroy: function destroy() {
-        [].concat(_toConsumableArray(document.querySelectorAll('.items-wrapper .item'))).map(function (elem) {
-            elem.className += ' destroy';
-        });
-    }
-};
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -200,21 +100,21 @@ exports.default = {
 };
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _data = __webpack_require__(3);
+var _data = __webpack_require__(2);
 
 var _data2 = _interopRequireDefault(_data);
 
-var _index = __webpack_require__(4);
+var _index = __webpack_require__(3);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _worksList = __webpack_require__(0);
+var _worksList = __webpack_require__(4);
 
 var _worksList2 = _interopRequireDefault(_worksList);
 
@@ -416,7 +316,7 @@ var handleGlobalNav = function handleGlobalNav() {};
 })();
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -536,7 +436,7 @@ exports.default = [{
 }];
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -545,15 +445,6 @@ exports.default = [{
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _worksList = __webpack_require__(0);
-
-var _worksList2 = _interopRequireDefault(_worksList);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 var callback = function callback() {
 
     var mainTextBox = document.getElementById('main-text');
@@ -575,117 +466,119 @@ var callback = function callback() {
         initVideo('/images/temp/bg2.mp4');
     }, 100);
 };
+/*
+    index 페이지에서 WORKS 페이지로 다이렉트 이동
+    import worksListUI from '../ui/worksList';
 
-// index 페이지에서 WORKS 페이지로 다이렉트 이동
+    let currentState = undefined;
+    let renderTimer;
+    const rootElem = document.getElementById('contents');
 
-var currentState = undefined;
-var renderTimer = void 0;
-var rootElem = document.getElementById('contents');
+    const getFilteredHash = (str = window.location.hash) => {
+        const hashInfo = {};
+        const arrayToHash = str.replace(/#\/?/,'').split('/');
 
-var getFilteredHash = function getFilteredHash() {
-    var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window.location.hash;
+        if(arrayToHash.length <= 1 && arrayToHash[0] == ''){
+            hashInfo.name = 'index';
+        }else{
+            hashInfo.name = arrayToHash[0];
+            arrayToHash.splice(0,1);
+            hashInfo.params = arrayToHash.length == 0 ? null : arrayToHash;
+        }
 
-    var hashInfo = {};
-    var arrayToHash = str.replace(/#\/?/, '').split('/');
+        return hashInfo;
+    };
 
-    if (arrayToHash.length <= 1 && arrayToHash[0] == '') {
-        hashInfo.name = 'index';
-    } else {
-        hashInfo.name = arrayToHash[0];
-        arrayToHash.splice(0, 1);
-        hashInfo.params = arrayToHash.length == 0 ? null : arrayToHash;
-    }
+    const getObjectByCategory = name => {
+        if(name != undefined){
+            let result;
+            switch(currentState){
+                case 'workslist' :
+                    result = worksListUI;
+                    break;
+                default:
+                    break;
+            }
 
-    return hashInfo;
-};
+            return result;
+        }
+    };
 
-var getObjectByCategory = function getObjectByCategory(name) {
-    if (name != undefined) {
-        var result = void 0;
-        switch (currentState) {
-            case 'workslist':
-                result = _worksList2.default;
-                break;
-            default:
+    const destroy = () =>{
+        const obj = getObjectByCategory(currentState);
+        if(obj && obj.destroy){
+            obj.destroy();
+        }
+    };
+
+    const setGnbButton = ctgrName => {
+        console.log(ctgrName);
+        let targetElem;
+        switch(ctgrName){
+            case 'workslist' :
+                targetElem = document.getElementById('button-works');
                 break;
         }
 
-        return result;
-    }
-};
+        console.log(targetElem);
 
-var destroy = function destroy() {
-    var obj = getObjectByCategory(currentState);
-    if (obj && obj.destroy) {
-        obj.destroy();
-    }
-};
+        if(targetElem){
+            [...document.querySelectorAll('#button-works')].map(liElem => {
+                liElem.className = '';
+            });
+            targetElem.className = 'active';
+        }
+    };
 
-var setGnbButton = function setGnbButton(ctgrName) {
-    console.log(ctgrName);
-    var targetElem = void 0;
-    switch (ctgrName) {
-        case 'workslist':
-            targetElem = document.getElementById('button-works');
-            break;
-    }
 
-    console.log(targetElem);
+    const render = () => {
+        let renderData;
+        const hashData = getFilteredHash(window.location.hash);
+        // destroy();
+        switch(hashData.name){
+            case 'works' :
+                currentState = 'workslist';
+                renderData = worksListUI.render(ContentsData , hashData);
+                break;
+            default :
+                renderData = {
+                    htmlString : '<div class="error404">유효하지 않은 페이지입니다.</div>'
+                }
+        }
 
-    if (targetElem) {
-        [].concat(_toConsumableArray(document.querySelectorAll('#button-works'))).map(function (liElem) {
-            liElem.className = '';
+        setGnbButton(currentState);
+        rootElem.innerHTML = renderData.htmlString;
+        if(renderData.callback){
+            renderData.callback();
+        }
+    };
+
+    render();
+
+    window.addEventListener('hashchange' , render);
+
+    (() => {
+
+        [...document.querySelectorAll('#button-works')].map( (elem , index) => {
+            elem.addEventListener('click', event => {
+                const target = event.currentTarget;
+                if(target.parentNode.className.match(/\s?active\s?/)){
+                    return;
+                }
+
+                renderTimer = setTimeout(() => {
+                    destroy();
+                    setTimeout(() => {
+                        currentState = target.dataset.ctgr;
+                        window.location.hash = target.dataset.href;
+                    },200);
+                },550);
+            });
         });
-        targetElem.className = 'active';
-    }
-};
 
-var render = function render() {
-    var renderData = void 0;
-    var hashData = getFilteredHash(window.location.hash);
-    // destroy();
-    switch (hashData.name) {
-        case 'works':
-            currentState = 'workslist';
-            renderData = _worksList2.default.render(ContentsData, hashData);
-            break;
-        default:
-            renderData = {
-                htmlString: '<div class="error404">유효하지 않은 페이지입니다.</div>'
-            };
-    }
-
-    setGnbButton(currentState);
-    rootElem.innerHTML = renderData.htmlString;
-    if (renderData.callback) {
-        renderData.callback();
-    }
-};
-
-render();
-
-window.addEventListener('hashchange', render);
-
-(function () {
-
-    [].concat(_toConsumableArray(document.querySelectorAll('#button-works'))).map(function (elem, index) {
-        elem.addEventListener('click', function (event) {
-            var target = event.currentTarget;
-            if (target.parentNode.className.match(/\s?active\s?/)) {
-                return;
-            }
-
-            renderTimer = setTimeout(function () {
-                destroy();
-                setTimeout(function () {
-                    currentState = target.dataset.ctgr;
-                    window.location.hash = target.dataset.href;
-                }, 200);
-            }, 550);
-        });
-    });
-})();
+    })();
 // END, index 페이지에서 WORKS 페이지로 다이렉트 이동
+*/
 
 var initVideo = function initVideo(videoSrc) {
     var elemVideo = document.createElement('video');
@@ -719,7 +612,7 @@ exports.default = {
     render: function render(contentsData) {
         var parentWidth = document.getElementById('contents').clientWidth;
 
-        var htmlString = '\n            <div class="main">\n                <div id="main-video" style="width:' + window.innerWidth + 'px;height:' + window.innerHeight + 'px;">\n                    <div>\n                        <video autoplay="" muted="" style="position:absolute;top:50%;">\n                            <source src="https://monopo.co.jp/wp-content/themes/monopo/video/bg2.mp4" type="video/mp4">\n                        </video>\n                    </div>\n                </div>\n                <div id="main-text" class="gnb-menu-wrapper">\n                    <h6>A CREATIVE DIGITAL AGENCY.</h6>\n                    <span></span>\n                    <h2 class="pc-ver">WE MAKE SUCCESSFUL DIGITAL<br />STORIES FOR WEB &amp; MOBILE</h2>\n                    <h2 class="tab-ver">WE MAKE<br />SUCCESSFUL DIGITAL<br />STORIES FOR<br /> WEB &amp; MOBILE</h2>\n                    <h2 class="mob-ver">WE MAKE<br /> SUCCESSFUL<br /> DIGITAL<br />STORIES FOR<br /> WEB &amp;<br /> MOBILE</h2>\n                    <a href="javascript:void(0)" data-href="/works" data-ctgr="workslist" id="button-works">OUR WORKS</a>\n                </div>\n            </div>\n        ';
+        var htmlString = '\n            <div class="main">\n                <div id="main-video" style="width:' + window.innerWidth + 'px;height:' + window.innerHeight + 'px;">\n                    <div>\n                        <video autoplay="" muted="" style="position:absolute;top:50%;">\n                            <source src="https://monopo.co.jp/wp-content/themes/monopo/video/bg2.mp4" type="video/mp4">\n                        </video>\n                    </div>\n                </div>\n                <div id="main-text" class="gnb-menu-wrapper">\n                    <h6>A CREATIVE DIGITAL AGENCY.</h6>\n                    <span></span>\n                    <h2 class="pc-ver">WE MAKE SUCCESSFUL DIGITAL<br />STORIES FOR WEB &amp; MOBILE</h2>\n                    <h2 class="tab-ver">WE MAKE<br />SUCCESSFUL DIGITAL<br />STORIES FOR<br /> WEB &amp; MOBILE</h2>\n                    <h2 class="mob-ver">WE MAKE<br /> SUCCESSFUL<br /> DIGITAL<br />STORIES FOR<br /> WEB &amp;<br /> MOBILE</h2>\n                    <a href="/#/works" data-href="/works" data-ctgr="workslist" id="button-works">OUR WORKS</a>\n                </div>\n            </div>\n        ';
 
         return {
             htmlString: htmlString,
@@ -729,6 +622,106 @@ exports.default = {
     destroy: function destroy() {
         document.getElementsByTagName('html')[0].classList.remove('main-page');
         document.querySelector('.main').classList.add('destroy');
+    }
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _common = __webpack_require__(0);
+
+var _common2 = _interopRequireDefault(_common);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var callback = function callback() {
+    var itemElems = document.querySelectorAll('.items-wrapper .item');
+
+    [].concat(_toConsumableArray(itemElems)).map(function (item, index) {
+        item.addEventListener('click', handleClick);
+
+        item.querySelector('.img').addEventListener('mousemove', function (event) {
+            handleImageMove(item.querySelectorAll('.img img'), event);
+        });
+
+        item.querySelector('.img').addEventListener('mouseleave', function (event) {
+            handleImageOut(item.querySelectorAll('.img img'), event);
+        });
+
+        setTimeout(function () {
+            item.className += ' loaded';
+        }, index * 50);
+    });
+};
+
+var handleClick = function handleClick(event) {
+    // console.log(event.currentTarget.dataset.href);
+    window.location.href = event.currentTarget.dataset.href;
+};
+
+var handleImageMove = function handleImageMove(imgData, event) {
+    var length = imgData.length;
+    var width = event.currentTarget.clientWidth;
+    var unit = event.currentTarget.clientWidth / length;
+
+    var curIndex = Math.floor((event.clientX - event.currentTarget.getBoundingClientRect().left) / unit);
+    curIndex = curIndex < 0 ? 0 : curIndex;
+
+    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
+        if (index == curIndex) {
+            img.className = 'loaded active';
+        } else {
+            img.className = 'loaded';
+        }
+    });
+};
+
+var handleImageOut = function handleImageOut(imgData, event) {
+    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
+        if (index == 0) {
+            img.className = 'loaded active';
+        } else {
+            img.className = 'loaded';
+        }
+    });
+};
+
+exports.default = {
+    render: function render(contentsData, paramData) {
+        var htmlString = '';
+        /* List */
+        htmlString = '\n            <div class="items-wrapper container clearfix">\n                <h2>RECENT WORK</h2>\n        ';
+        var viewCol = 3;
+        contentsData.map(function (data, index) {
+            var itemColsOrder = Math.abs(index % viewCol);
+            var itemRowsOrder = Math.floor(index / viewCol);
+            var elemLink = _common2.default.getNameToLink(data.name);
+
+            htmlString += '\n                <div class="item" data-id="' + index + '" data-href="/#/works/' + elemLink + '">\n                    <div class="item-wrapper">\n                        <div class="img">\n                            ' + data.thumbnails.imgList.map(function (imgPath, index) {
+                return '<img src="' + (data.thumbnails.publicPath + imgPath) + '" ' + (index == 0 ? 'class="active"' : '') + ' alt="" />';
+            }).join('') + '\n                        </div>\n                        <div class="info">\n                            <h3>' + data.title + '</h3>\n                            <div class="date">' + data.date + '</div>\n                        </div>\n                    </div>\n\n                </div>\n            ';
+        });
+        htmlString += '</div>';
+
+        return {
+            htmlString: htmlString,
+            callback: callback
+        };
+    },
+    destroy: function destroy() {
+        [].concat(_toConsumableArray(document.querySelectorAll('.items-wrapper .item'))).map(function (elem) {
+            elem.className += ' destroy';
+        });
     }
 };
 
@@ -743,7 +736,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _common = __webpack_require__(1);
+var _common = __webpack_require__(0);
 
 var _common2 = _interopRequireDefault(_common);
 
