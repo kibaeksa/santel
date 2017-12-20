@@ -1,8 +1,7 @@
 const callback = () => {
     console.log('callback');
-    let title = document.getElementsByTagName('p');
 
-    title.style.color = "#456852";
+
 };
 
 export default {
@@ -14,6 +13,9 @@ export default {
                     <p id="title">눈누난나</p>
                 </div>
              -->
+            <style>
+             #header h1 a{color: #fff;}
+            </style>
             <div class="about-title-box">
                 <h2>About Us</h2>
                 <p>We make successfull digital stories for WEB &amp; MOBILE</p>
@@ -66,43 +68,61 @@ export default {
                 </div>
             </div>
             <div class="about-service-box">
-                <span class="dash-bottom line-w"></span>
+                <span class="dash-bottom"></span>
                 <h4>Service</h4>
                 <div class="service-contents">
                     <dl class="service-list-1">
-                        <dt></dt>
-                        <dd></dd>
+                        <dt>BRANDING</dt>
+                        <dd>Corporate image Art direction</dd>
+                        <dd>Graphic design</dd>
+                        <dd>Interactive design</dd>
+                        <dd>Web and mobile</dd>
+                        <dd>Web app</dd>
+                        <dd>Motion design</dd>
                     </dl>
-                    <span class="dash-ser-1"></span>
+                    <span class="dash-service ser-1"></span>
                     <dl class="service-list-2">
-                        <dt></dt>
-                        <dd></dd>
+                        <dt>STRATEGY</dt>
+                        <dd>Brand strategy</dd>
+                        <dd>Interactive strategy</dd>
+                        <dd>Consultant services and project planning</dd>
+                        <dd>Data analysis</dd>
                     </dl>
-                    <span class="dash-ser-2"></span>
+                    <span class="dash-service ser-2"></span>
                     <dl class="service-list-3">
-                        <dt></dt>
-                        <dd></dd>
+                        <dt>E-COMMERCE</dt>
+                        <dd>Consulting</dd>
+                        <dd>Shopping mall Development</dd>
+                        <dd>Design & marketing</dd>
+                        <dd>System maintenance CRM</dd>
+                        <dd>Market analysis</dd>
                     </dl>
-                    <span class="dash-ser-3"></span>
+                    <span class="dash-service ser-3"></span>
                     <dl class="service-list-4">
-                        <dt></dt>
-                        <dd></dd>
+                        <dt>MARKTING & COMMUNICATIONS</dt>
+                        <dd>Advertising(print, interactive, SNS)</dd>
+                        <dd>Integrated campaigns</dd>
+                        <dd>Promotional campaigns</dd>
+                        <dd>Community management</dd>
+                        <dd>Corporate videos</dd>
                     </dl>
                 </div>
             </div>
             <div class="about-contact-box">
-                <div class="contact-contents">
-                    <div class="info">
-                        <h5>CONTACT</h5>
-                        <p>5TH FLOOR, 9-15, GANGNAM-DAERO 55-GIL,<br />SEOCHO-GU, SEOUL, REPUBLIC OF KOREA</p>
-                        <p class='font-b'>TEL : 02.501.6172</p>
-                        <p class='font-b'>FAX : 02.6499.1250</p>
-                    </div>
-                    <a href="#" class="map-load">MAP</a>
-                    <div class="email">
-                        <h5>WORK WITH US</h5>
-                        <a href="mailto:Contact@santelglobal.com" class="link">Contact@santelglobal.com</a>
-                    </div>
+                <div class="contact-info">
+
+                    <h5>CONTACT</h5>
+                    <p>5TH FLOOR, 9-15, GANGNAM-DAERO 55-GIL,<br />SEOCHO-GU, SEOUL, REPUBLIC OF KOREA</p>
+                    <ul>
+                        <li><p>TEL : 02.501.6172</p></li>
+                        <li><p>FAX : 02.6499.1250</li>
+                    </ul>
+
+                    <a href="https://www.google.co.kr/maps/place/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EC%84%9C%EC%B4%88%EA%B5%AC+%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C55%EA%B8%B8+9-15/@37.4947021,127.0257289,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca15af2cf9b17:0xd1ccf1ba8e2f15a0!8m2!3d37.4947021!4d127.0279176?dcr=0" target="_blank"  class="map-load">MAP</a>
+
+                    <h5 class="none_mb">WORK WITH US</h5>
+                    <a href="mailto:Contact@santelglobal.com" class="email-load">Contact@santelglobal.com</a>
+
                 </div>
             </div>
             <div class="about-work-box">

@@ -21,118 +21,6 @@ const callback = () => {
 
 };
 
-// index 페이지에서 WORKS 페이지로 다이렉트 이동
-
-    import worksListUI from '../ui/worksList';
-
-    let currentState = undefined;
-    let renderTimer;
-    const rootElem = document.getElementById('contents');
-
-    const getFilteredHash = (str = window.location.hash) => {
-        const hashInfo = {};
-        const arrayToHash = str.replace(/#\/?/,'').split('/');
-
-        if(arrayToHash.length <= 1 && arrayToHash[0] == ''){
-            hashInfo.name = 'index';
-        }else{
-            hashInfo.name = arrayToHash[0];
-            arrayToHash.splice(0,1);
-            hashInfo.params = arrayToHash.length == 0 ? null : arrayToHash;
-        }
-
-        return hashInfo;
-    };
-
-    const getObjectByCategory = name => {
-        if(name != undefined){
-            let result;
-            switch(currentState){
-                case 'workslist' :
-                    result = worksListUI;
-                    break;
-                default:
-                    break;
-            }
-
-            return result;
-        }
-    };
-
-    const destroy = () =>{
-        const obj = getObjectByCategory(currentState);
-        if(obj && obj.destroy){
-            obj.destroy();
-        }
-    };
-
-    const setGnbButton = ctgrName => {
-        console.log(ctgrName);
-        let targetElem;
-        switch(ctgrName){
-            case 'workslist' :
-                targetElem = document.getElementById('button-works');
-                break;
-        }
-
-        console.log(targetElem);
-
-        if(targetElem){
-            [...document.querySelectorAll('#button-works')].map(liElem => {
-                liElem.className = '';
-            });
-            targetElem.className = 'active';
-        }
-    };
-
-    const render = () => {
-        let renderData;
-        const hashData = getFilteredHash(window.location.hash);
-        // destroy();
-        switch(hashData.name){
-            case 'works' :
-                currentState = 'workslist';
-                renderData = worksListUI.render(ContentsData , hashData);
-                break;
-            default :
-                renderData = {
-                    htmlString : '<div class="error404">유효하지 않은 페이지입니다.</div>'
-                }
-        }
-
-        setGnbButton(currentState);
-        rootElem.innerHTML = renderData.htmlString;
-        if(renderData.callback){
-            renderData.callback();
-        }
-    };
-
-    render();
-
-    window.addEventListener('hashchange' , render);
-
-    (() => {
-
-        [...document.querySelectorAll('#button-works')].map( (elem , index) => {
-            elem.addEventListener('click', event => {
-                const target = event.currentTarget;
-                if(target.parentNode.className.match(/\s?active\s?/)){
-                    return;
-                }
-
-                renderTimer = setTimeout(() => {
-                    destroy();
-                    setTimeout(() => {
-                        currentState = target.dataset.ctgr;
-                        window.location.hash = target.dataset.href;
-                    },200);
-                },550);
-            });
-        });
-
-    })();
-// END, index 페이지에서 WORKS 페이지로 다이렉트 이동
-
 const initVideo = videoSrc => {
     const elemVideo = document.createElement('video');
     const elemSource = document.createElement('source');
@@ -181,7 +69,7 @@ export default {
                     <h2 class="pc-ver">WE MAKE SUCCESSFUL DIGITAL<br />STORIES FOR WEB &amp; MOBILE</h2>
                     <h2 class="tab-ver">WE MAKE<br />SUCCESSFUL DIGITAL<br />STORIES FOR<br /> WEB &amp; MOBILE</h2>
                     <h2 class="mob-ver">WE MAKE<br /> SUCCESSFUL<br /> DIGITAL<br />STORIES FOR<br /> WEB &amp;<br /> MOBILE</h2>
-                    <a href="javascript:void(0)" data-href="/works" data-ctgr="workslist" id="button-works">OUR WORKS</a>
+                    <a href="/#/works" data-href="/works" data-ctgr="workslist" id="button-works">OUR WORKS</a>
                 </div>
             </div>
         `;

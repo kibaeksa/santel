@@ -60,111 +60,11 @@
 /******/ 	__webpack_require__.p = "/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _common = __webpack_require__(1);
-
-var _common2 = _interopRequireDefault(_common);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var callback = function callback() {
-    var itemElems = document.querySelectorAll('.items-wrapper .item');
-
-    [].concat(_toConsumableArray(itemElems)).map(function (item, index) {
-        item.addEventListener('click', handleClick);
-
-        item.querySelector('.img').addEventListener('mousemove', function (event) {
-            handleImageMove(item.querySelectorAll('.img img'), event);
-        });
-
-        item.querySelector('.img').addEventListener('mouseleave', function (event) {
-            handleImageOut(item.querySelectorAll('.img img'), event);
-        });
-
-        setTimeout(function () {
-            item.className += ' loaded';
-        }, index * 50);
-    });
-};
-
-var handleClick = function handleClick(event) {
-    // console.log(event.currentTarget.dataset.href);
-    window.location.href = event.currentTarget.dataset.href;
-};
-
-var handleImageMove = function handleImageMove(imgData, event) {
-    var length = imgData.length;
-    var width = event.currentTarget.clientWidth;
-    var unit = event.currentTarget.clientWidth / length;
-
-    var curIndex = Math.floor((event.clientX - event.currentTarget.getBoundingClientRect().left) / unit);
-    curIndex = curIndex < 0 ? 0 : curIndex;
-
-    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
-        if (index == curIndex) {
-            img.className = 'loaded active';
-        } else {
-            img.className = 'loaded';
-        }
-    });
-};
-
-var handleImageOut = function handleImageOut(imgData, event) {
-    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
-        if (index == 0) {
-            img.className = 'loaded active';
-        } else {
-            img.className = 'loaded';
-        }
-    });
-};
-
-exports.default = {
-    render: function render(contentsData, paramData) {
-        var htmlString = '';
-        /* List */
-        htmlString = '\n            <div class="items-wrapper container clearfix">\n                <h2>RECENT WORK</h2>\n        ';
-        var viewCol = 3;
-        contentsData.map(function (data, index) {
-            var itemColsOrder = Math.abs(index % viewCol);
-            var itemRowsOrder = Math.floor(index / viewCol);
-            var elemLink = _common2.default.getNameToLink(data.name);
-
-            htmlString += '\n                <div class="item" data-id="' + index + '" data-href="/#/works/' + elemLink + '">\n                    <div class="item-wrapper">\n                        <div class="img">\n                            ' + data.thumbnails.imgList.map(function (imgPath, index) {
-                return '<img src="' + (data.thumbnails.publicPath + imgPath) + '" ' + (index == 0 ? 'class="active"' : '') + ' alt="" />';
-            }).join('') + '\n                        </div>\n                        <div class="info">\n                            <h3>' + data.title + '</h3>\n                            <div class="date">' + data.date + '</div>\n                        </div>\n                    </div>\n\n                </div>\n            ';
-        });
-        htmlString += '</div>';
-
-        return {
-            htmlString: htmlString,
-            callback: callback
-        };
-    },
-    destroy: function destroy() {
-        [].concat(_toConsumableArray(document.querySelectorAll('.items-wrapper .item'))).map(function (elem) {
-            elem.className += ' destroy';
-        });
-    }
-};
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -200,21 +100,21 @@ exports.default = {
 };
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _data = __webpack_require__(3);
+var _data = __webpack_require__(2);
 
 var _data2 = _interopRequireDefault(_data);
 
-var _index = __webpack_require__(4);
+var _index = __webpack_require__(3);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _worksList = __webpack_require__(0);
+var _worksList = __webpack_require__(4);
 
 var _worksList2 = _interopRequireDefault(_worksList);
 
@@ -416,7 +316,7 @@ var handleGlobalNav = function handleGlobalNav() {};
 })();
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -536,7 +436,7 @@ exports.default = [{
 }];
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -545,15 +445,6 @@ exports.default = [{
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _worksList = __webpack_require__(0);
-
-var _worksList2 = _interopRequireDefault(_worksList);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 var callback = function callback() {
 
     var mainTextBox = document.getElementById('main-text');
@@ -575,117 +466,6 @@ var callback = function callback() {
         initVideo('/images/temp/bg2.mp4');
     }, 100);
 };
-
-// index 페이지에서 WORKS 페이지로 다이렉트 이동
-
-var currentState = undefined;
-var renderTimer = void 0;
-var rootElem = document.getElementById('contents');
-
-var getFilteredHash = function getFilteredHash() {
-    var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : window.location.hash;
-
-    var hashInfo = {};
-    var arrayToHash = str.replace(/#\/?/, '').split('/');
-
-    if (arrayToHash.length <= 1 && arrayToHash[0] == '') {
-        hashInfo.name = 'index';
-    } else {
-        hashInfo.name = arrayToHash[0];
-        arrayToHash.splice(0, 1);
-        hashInfo.params = arrayToHash.length == 0 ? null : arrayToHash;
-    }
-
-    return hashInfo;
-};
-
-var getObjectByCategory = function getObjectByCategory(name) {
-    if (name != undefined) {
-        var result = void 0;
-        switch (currentState) {
-            case 'workslist':
-                result = _worksList2.default;
-                break;
-            default:
-                break;
-        }
-
-        return result;
-    }
-};
-
-var destroy = function destroy() {
-    var obj = getObjectByCategory(currentState);
-    if (obj && obj.destroy) {
-        obj.destroy();
-    }
-};
-
-var setGnbButton = function setGnbButton(ctgrName) {
-    console.log(ctgrName);
-    var targetElem = void 0;
-    switch (ctgrName) {
-        case 'workslist':
-            targetElem = document.getElementById('button-works');
-            break;
-    }
-
-    console.log(targetElem);
-
-    if (targetElem) {
-        [].concat(_toConsumableArray(document.querySelectorAll('#button-works'))).map(function (liElem) {
-            liElem.className = '';
-        });
-        targetElem.className = 'active';
-    }
-};
-
-var render = function render() {
-    var renderData = void 0;
-    var hashData = getFilteredHash(window.location.hash);
-    // destroy();
-    switch (hashData.name) {
-        case 'works':
-            currentState = 'workslist';
-            renderData = _worksList2.default.render(ContentsData, hashData);
-            break;
-        default:
-            renderData = {
-                htmlString: '<div class="error404">유효하지 않은 페이지입니다.</div>'
-            };
-    }
-
-    setGnbButton(currentState);
-    rootElem.innerHTML = renderData.htmlString;
-    if (renderData.callback) {
-        renderData.callback();
-    }
-};
-
-render();
-
-window.addEventListener('hashchange', render);
-
-(function () {
-
-    [].concat(_toConsumableArray(document.querySelectorAll('#button-works'))).map(function (elem, index) {
-        elem.addEventListener('click', function (event) {
-            var target = event.currentTarget;
-            if (target.parentNode.className.match(/\s?active\s?/)) {
-                return;
-            }
-
-            renderTimer = setTimeout(function () {
-                destroy();
-                setTimeout(function () {
-                    currentState = target.dataset.ctgr;
-                    window.location.hash = target.dataset.href;
-                }, 200);
-            }, 550);
-        });
-    });
-})();
-// END, index 페이지에서 WORKS 페이지로 다이렉트 이동
 
 var initVideo = function initVideo(videoSrc) {
     var elemVideo = document.createElement('video');
@@ -719,7 +499,7 @@ exports.default = {
     render: function render(contentsData) {
         var parentWidth = document.getElementById('contents').clientWidth;
 
-        var htmlString = '\n            <div class="main">\n                <div id="main-video" style="width:' + window.innerWidth + 'px;height:' + window.innerHeight + 'px;">\n                    <div>\n                        <video autoplay="" muted="" style="position:absolute;top:50%;">\n                            <source src="https://monopo.co.jp/wp-content/themes/monopo/video/bg2.mp4" type="video/mp4">\n                        </video>\n                    </div>\n                </div>\n                <div id="main-text" class="gnb-menu-wrapper">\n                    <h6>A CREATIVE DIGITAL AGENCY.</h6>\n                    <span></span>\n                    <h2 class="pc-ver">WE MAKE SUCCESSFUL DIGITAL<br />STORIES FOR WEB &amp; MOBILE</h2>\n                    <h2 class="tab-ver">WE MAKE<br />SUCCESSFUL DIGITAL<br />STORIES FOR<br /> WEB &amp; MOBILE</h2>\n                    <h2 class="mob-ver">WE MAKE<br /> SUCCESSFUL<br /> DIGITAL<br />STORIES FOR<br /> WEB &amp;<br /> MOBILE</h2>\n                    <a href="javascript:void(0)" data-href="/works" data-ctgr="workslist" id="button-works">OUR WORKS</a>\n                </div>\n            </div>\n        ';
+        var htmlString = '\n            <div class="main">\n                <div id="main-video" style="width:' + window.innerWidth + 'px;height:' + window.innerHeight + 'px;">\n                    <div>\n                        <video autoplay="" muted="" style="position:absolute;top:50%;">\n                            <source src="https://monopo.co.jp/wp-content/themes/monopo/video/bg2.mp4" type="video/mp4">\n                        </video>\n                    </div>\n                </div>\n                <div id="main-text" class="gnb-menu-wrapper">\n                    <h6>A CREATIVE DIGITAL AGENCY.</h6>\n                    <span></span>\n                    <h2 class="pc-ver">WE MAKE SUCCESSFUL DIGITAL<br />STORIES FOR WEB &amp; MOBILE</h2>\n                    <h2 class="tab-ver">WE MAKE<br />SUCCESSFUL DIGITAL<br />STORIES FOR<br /> WEB &amp; MOBILE</h2>\n                    <h2 class="mob-ver">WE MAKE<br /> SUCCESSFUL<br /> DIGITAL<br />STORIES FOR<br /> WEB &amp;<br /> MOBILE</h2>\n                    <a href="/#/works" data-href="/works" data-ctgr="workslist" id="button-works">OUR WORKS</a>\n                </div>\n            </div>\n        ';
 
         return {
             htmlString: htmlString,
@@ -729,6 +509,106 @@ exports.default = {
     destroy: function destroy() {
         document.getElementsByTagName('html')[0].classList.remove('main-page');
         document.querySelector('.main').classList.add('destroy');
+    }
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _common = __webpack_require__(0);
+
+var _common2 = _interopRequireDefault(_common);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var callback = function callback() {
+    var itemElems = document.querySelectorAll('.items-wrapper .item');
+
+    [].concat(_toConsumableArray(itemElems)).map(function (item, index) {
+        item.addEventListener('click', handleClick);
+
+        item.querySelector('.img').addEventListener('mousemove', function (event) {
+            handleImageMove(item.querySelectorAll('.img img'), event);
+        });
+
+        item.querySelector('.img').addEventListener('mouseleave', function (event) {
+            handleImageOut(item.querySelectorAll('.img img'), event);
+        });
+
+        setTimeout(function () {
+            item.className += ' loaded';
+        }, index * 50);
+    });
+};
+
+var handleClick = function handleClick(event) {
+    // console.log(event.currentTarget.dataset.href);
+    window.location.href = event.currentTarget.dataset.href;
+};
+
+var handleImageMove = function handleImageMove(imgData, event) {
+    var length = imgData.length;
+    var width = event.currentTarget.clientWidth;
+    var unit = event.currentTarget.clientWidth / length;
+
+    var curIndex = Math.floor((event.clientX - event.currentTarget.getBoundingClientRect().left) / unit);
+    curIndex = curIndex < 0 ? 0 : curIndex;
+
+    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
+        if (index == curIndex) {
+            img.className = 'loaded active';
+        } else {
+            img.className = 'loaded';
+        }
+    });
+};
+
+var handleImageOut = function handleImageOut(imgData, event) {
+    [].concat(_toConsumableArray(imgData)).map(function (img, index) {
+        if (index == 0) {
+            img.className = 'loaded active';
+        } else {
+            img.className = 'loaded';
+        }
+    });
+};
+
+exports.default = {
+    render: function render(contentsData, paramData) {
+        var htmlString = '';
+        /* List */
+        htmlString = '\n            <div class="items-wrapper container clearfix">\n                <h2>RECENT WORK</h2>\n        ';
+        var viewCol = 3;
+        contentsData.map(function (data, index) {
+            var itemColsOrder = Math.abs(index % viewCol);
+            var itemRowsOrder = Math.floor(index / viewCol);
+            var elemLink = _common2.default.getNameToLink(data.name);
+
+            htmlString += '\n                <div class="item" data-id="' + index + '" data-href="/#/works/' + elemLink + '">\n                    <div class="item-wrapper">\n                        <div class="img">\n                            ' + data.thumbnails.imgList.map(function (imgPath, index) {
+                return '<img src="' + (data.thumbnails.publicPath + imgPath) + '" ' + (index == 0 ? 'class="active"' : '') + ' alt="" />';
+            }).join('') + '\n                        </div>\n                        <div class="info">\n                            <h3>' + data.title + '</h3>\n                            <div class="date">' + data.date + '</div>\n                        </div>\n                    </div>\n\n                </div>\n            ';
+        });
+        htmlString += '</div>';
+
+        return {
+            htmlString: htmlString,
+            callback: callback
+        };
+    },
+    destroy: function destroy() {
+        [].concat(_toConsumableArray(document.querySelectorAll('.items-wrapper .item'))).map(function (elem) {
+            elem.className += ' destroy';
+        });
     }
 };
 
@@ -743,7 +623,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _common = __webpack_require__(1);
+var _common = __webpack_require__(0);
 
 var _common2 = _interopRequireDefault(_common);
 
@@ -812,14 +692,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 var callback = function callback() {
     console.log('callback');
-    var title = document.getElementsByTagName('p');
-
-    title.style.color = "#456852";
 };
 
 exports.default = {
     render: function render() {
-        var htmlString = '\n            <!--\n                <div class="about" style="padding-top:120px;text-align:center;">\n                    <h2>ABOUT</h2>\n                    <p id="title">\uB208\uB204\uB09C\uB098</p>\n                </div>\n             -->\n            <div class="about-title-box">\n                <h2>About Us</h2>\n                <p>We make successfull digital stories for WEB &amp; MOBILE</p>\n            </div>\n            <div class="about-intro-box">\n                <div class="about-object-group">\n                    <div class="obj-thunder thu-1"></div>\n                    <div class="obj-thunder thu-2"></div>\n                    <div class="obj-thunder thu-3"></div>\n                    <div class="obj-Hcircle top-hcir"><span class="dottCir"></span></div>\n                    <div class="obj-diagonal dg_left"></div>\n                    <div class="obj-square squ-1"></div>\n                    <div class="obj-square squ-2"></div>\n                    <div class="obj-wave"></div>\n                    <div class="obj-long-line"></div>\n                    <div class="obj-diagonal dg_right"></div>\n                    <div class="obj-quites qut-ani"></div>\n                    <div class="obj-HcirLine"><span class="cir-line"></span></div>\n                    <div class="obj-quites qut-small"></div>\n                    <div class="obj-square squ-3"></div>\n                    <div class="obj-square squ-4"></div>\n                    <div class="obj-thunder thu-4"></div>\n                    <div class="obj-thunder thu-5"></div>\n                    <div class="obj-thunder thu-6"></div>\n                    <div class="obj-Hcircle bot-hcir"><span class="dottCir"></span></div>\n                </div>\n                <div class="article-gold">\n                    <div class="art-text-box">\n                        <h3 class="art-text1">Design</h3>\n                        <h3 class="art-text2">and</h3>\n                        <h3 class="art-text3">Marketing</h3>\n                        <span class="bgc-gray"></span>\n                    </div>\n                </div>\n                <div class="article-vision">\n                    <h4>Vision</h4>\n                    <p>\uC6B0\uB9AC\uB294 \uC6B0\uB9AC\uC758 \uB514\uC790\uC778\uACFC \uAE30\uC220\uC744 \uD1B5\uD574 \uC880 \uB354 \uB098\uC740 \uC138\uC0C1\uC744 \uB9CC\uB4E4\uACE0\uC790 \uD569\uB2C8\uB2E4.</p>\n                    <p>\uC6B0\uB9AC\uB294 \uC624\uC9C1 \uB354 \uB098\uC740 \uBC1C\uC804\uB428\uC744 \uCD94\uAD6C\uD558\uBA70, \uC131\uACF5\uC801\uC778 \uC628\uB77C\uC778 \uBE44\uC9C0\uB2C8\uC2A4\uB97C <br/> \uB2EC\uC131\uD558\uAE30 \uC704\uD55C <span class="font-g">\uC804\uB7B5\uC801 \uD30C\uD2B8\uB108</span>\uAC00 \uB418\uACE0\uC790\uD569\uB2C8\uB2E4.</p>\n                    <span class="dash-bottom line-w"></span>\n                    <span class="dash-bottom line-g"></span>\n                </div>\n                <div class="article-principal">\n                    <h4>Principal</h4>\n                    <p>\uC6B0\uB9AC\uC758 \uBAA9\uD45C\uB294 \uD0C1\uC6D4\uD558\uACE0 \uC7AC\uB2A5 \uC788\uB294 \uC778\uB825\uC744 \uD655\uBCF4\uD558\uC5EC <br/> \uAC01\uC790\uC758 \uB3C5\uCC3D\uC131\uC744 \uC774\uB04C\uC5B4 \uB0B4\uB294 \uAC83\uC785\uB2C8\uB2E4. <br/>\n                        \uD3B8\uC548\uD55C \uBD84\uC704\uAE30\uC640 \uBA85\uD655\uD55C \uC6B4\uC601 \uD504\uB85C\uC138\uC2A4\uAC00 \uC774\uB97C \uC9C0\uC6D0\uD560 \uAC83\uC774\uBA70, <br/><span class="font-g">\uAC1C\uC778\uACFC \uC870\uC9C1\uC758 \uBAA9\uD45C\uAC00 \uB2E4\uB974\uC9C0 \uC54A\uC74C\uC744 \uC2E4\uCC9C</span>\uD558\uACE0\uC790 \uD569\uB2C8\uB2E4.</p>\n                    <p>\uC9C0\uB09C 8\uB144 \uB3D9\uC548 \uD6CC\uB96D\uD55C \uC778\uB825\uACFC \uAC15\uD55C \uD300\uC6CC\uD06C\uB97C \uD655\uBCF4 \uD588\uC73C\uBA70 <br/> \uC9C0\uC18D\uC801\uC778 \uD601\uC2E0\uC744 \uC704\uD574 \uB178\uB825\uD574 \uC654\uC2B5\uB2C8\uB2E4. <br/>\n                        \uD604\uC7AC \uC6B0\uB9AC\uB294 \uC628\uB77C\uC778 \uBE44\uC9C0\uB2C8\uC2A4\uC640 \uBBF8\uB514\uC5B4, \uD2B9\uD788 \uC628\uB77C\uC778\uCEE4\uBA38\uC2A4\uC5D0 \uB300\uD55C <br/> \uC804\uBB38 \uC9C0\uC2DD\uACFC \uB2E4\uC591\uD55C \uACBD\uD5D8\uC744 \uAC00\uC9C0\uACE0 \uC788\uC2B5\uB2C8\uB2E4.</p>\n                    <p>\uC55E\uC73C\uB85C\uB3C4 \uC5B4\uB5A4 \uB3C4\uC804\uC774 \uC624\uB354\uB77C\uB3C4 <br/><span class="font-g">\uC624\uC9C1 \uB354 \uB098\uC74C\uC744 \uC704\uD574</span>\uCC3D\uC758\uC801\uC73C\uB85C \uC0DD\uAC01\uD558\uACE0 \uBC1C\uC804\uD574 \uB098\uAC08 \uAC83\uC785\uB2C8\uB2E4.</p>\n                    <span class="dash-bottom line-g"></span>\n                </div>\n            </div>\n            <div class="about-service-box">\n                <span class="dash-bottom line-w"></span>\n                <h4>Service</h4>\n                <div class="service-contents">\n                    <dl class="service-list-1">\n                        <dt></dt>\n                        <dd></dd>\n                    </dl>\n                    <span class="dash-ser-1"></span>\n                    <dl class="service-list-2">\n                        <dt></dt>\n                        <dd></dd>\n                    </dl>\n                    <span class="dash-ser-2"></span>\n                    <dl class="service-list-3">\n                        <dt></dt>\n                        <dd></dd>\n                    </dl>\n                    <span class="dash-ser-3"></span>\n                    <dl class="service-list-4">\n                        <dt></dt>\n                        <dd></dd>\n                    </dl>\n                </div>\n            </div>\n            <div class="about-contact-box">\n                <div class="contact-contents">\n                    <div class="info">\n                        <h5>CONTACT</h5>\n                        <p>5TH FLOOR, 9-15, GANGNAM-DAERO 55-GIL,<br />SEOCHO-GU, SEOUL, REPUBLIC OF KOREA</p>\n                        <p class=\'font-b\'>TEL : 02.501.6172</p>\n                        <p class=\'font-b\'>FAX : 02.6499.1250</p>\n                    </div>\n                    <a href="#" class="map-load">MAP</a>\n                    <div class="email">\n                        <h5>WORK WITH US</h5>\n                        <a href="mailto:Contact@santelglobal.com" class="link">Contact@santelglobal.com</a>\n                    </div>\n                </div>\n            </div>\n            <div class="about-work-box">\n                <a href="">\n                    <div class="load-box">\n                        <p>Works</p>\n                        <img src="#" alt="#">\n                    </div>\n                    <div class="active-box">\n                        <p>Works</p>\n                        <div class="dir-ani">\n                            <span class="col-line"></span>\n                            <span class="diag-1"></span>\n                            <span class="diag-2"></span>\n                        </div>\n                    </div>\n                </a>\n            </div>\n        ';
+        var htmlString = '\n            <!--\n                <div class="about" style="padding-top:120px;text-align:center;">\n                    <h2>ABOUT</h2>\n                    <p id="title">\uB208\uB204\uB09C\uB098</p>\n                </div>\n             -->\n            <style>\n             #header h1 a{color: #fff;}\n            </style>\n            <div class="about-title-box">\n                <h2>About Us</h2>\n                <p>We make successfull digital stories for WEB &amp; MOBILE</p>\n            </div>\n            <div class="about-intro-box">\n                <div class="about-object-group">\n                    <div class="obj-thunder thu-1"></div>\n                    <div class="obj-thunder thu-2"></div>\n                    <div class="obj-thunder thu-3"></div>\n                    <div class="obj-Hcircle top-hcir"><span class="dottCir"></span></div>\n                    <div class="obj-diagonal dg_left"></div>\n                    <div class="obj-square squ-1"></div>\n                    <div class="obj-square squ-2"></div>\n                    <div class="obj-wave"></div>\n                    <div class="obj-long-line"></div>\n                    <div class="obj-diagonal dg_right"></div>\n                    <div class="obj-quites qut-ani"></div>\n                    <div class="obj-HcirLine"><span class="cir-line"></span></div>\n                    <div class="obj-quites qut-small"></div>\n                    <div class="obj-square squ-3"></div>\n                    <div class="obj-square squ-4"></div>\n                    <div class="obj-thunder thu-4"></div>\n                    <div class="obj-thunder thu-5"></div>\n                    <div class="obj-thunder thu-6"></div>\n                    <div class="obj-Hcircle bot-hcir"><span class="dottCir"></span></div>\n                </div>\n                <div class="article-gold">\n                    <div class="art-text-box">\n                        <h3 class="art-text1">Design</h3>\n                        <h3 class="art-text2">and</h3>\n                        <h3 class="art-text3">Marketing</h3>\n                        <span class="bgc-gray"></span>\n                    </div>\n                </div>\n                <div class="article-vision">\n                    <h4>Vision</h4>\n                    <p>\uC6B0\uB9AC\uB294 \uC6B0\uB9AC\uC758 \uB514\uC790\uC778\uACFC \uAE30\uC220\uC744 \uD1B5\uD574 \uC880 \uB354 \uB098\uC740 \uC138\uC0C1\uC744 \uB9CC\uB4E4\uACE0\uC790 \uD569\uB2C8\uB2E4.</p>\n                    <p>\uC6B0\uB9AC\uB294 \uC624\uC9C1 \uB354 \uB098\uC740 \uBC1C\uC804\uB428\uC744 \uCD94\uAD6C\uD558\uBA70, \uC131\uACF5\uC801\uC778 \uC628\uB77C\uC778 \uBE44\uC9C0\uB2C8\uC2A4\uB97C <br/> \uB2EC\uC131\uD558\uAE30 \uC704\uD55C <span class="font-g">\uC804\uB7B5\uC801 \uD30C\uD2B8\uB108</span>\uAC00 \uB418\uACE0\uC790\uD569\uB2C8\uB2E4.</p>\n                    <span class="dash-bottom line-w"></span>\n                    <span class="dash-bottom line-g"></span>\n                </div>\n                <div class="article-principal">\n                    <h4>Principal</h4>\n                    <p>\uC6B0\uB9AC\uC758 \uBAA9\uD45C\uB294 \uD0C1\uC6D4\uD558\uACE0 \uC7AC\uB2A5 \uC788\uB294 \uC778\uB825\uC744 \uD655\uBCF4\uD558\uC5EC <br/> \uAC01\uC790\uC758 \uB3C5\uCC3D\uC131\uC744 \uC774\uB04C\uC5B4 \uB0B4\uB294 \uAC83\uC785\uB2C8\uB2E4. <br/>\n                        \uD3B8\uC548\uD55C \uBD84\uC704\uAE30\uC640 \uBA85\uD655\uD55C \uC6B4\uC601 \uD504\uB85C\uC138\uC2A4\uAC00 \uC774\uB97C \uC9C0\uC6D0\uD560 \uAC83\uC774\uBA70, <br/><span class="font-g">\uAC1C\uC778\uACFC \uC870\uC9C1\uC758 \uBAA9\uD45C\uAC00 \uB2E4\uB974\uC9C0 \uC54A\uC74C\uC744 \uC2E4\uCC9C</span>\uD558\uACE0\uC790 \uD569\uB2C8\uB2E4.</p>\n                    <p>\uC9C0\uB09C 8\uB144 \uB3D9\uC548 \uD6CC\uB96D\uD55C \uC778\uB825\uACFC \uAC15\uD55C \uD300\uC6CC\uD06C\uB97C \uD655\uBCF4 \uD588\uC73C\uBA70 <br/> \uC9C0\uC18D\uC801\uC778 \uD601\uC2E0\uC744 \uC704\uD574 \uB178\uB825\uD574 \uC654\uC2B5\uB2C8\uB2E4. <br/>\n                        \uD604\uC7AC \uC6B0\uB9AC\uB294 \uC628\uB77C\uC778 \uBE44\uC9C0\uB2C8\uC2A4\uC640 \uBBF8\uB514\uC5B4, \uD2B9\uD788 \uC628\uB77C\uC778\uCEE4\uBA38\uC2A4\uC5D0 \uB300\uD55C <br/> \uC804\uBB38 \uC9C0\uC2DD\uACFC \uB2E4\uC591\uD55C \uACBD\uD5D8\uC744 \uAC00\uC9C0\uACE0 \uC788\uC2B5\uB2C8\uB2E4.</p>\n                    <p>\uC55E\uC73C\uB85C\uB3C4 \uC5B4\uB5A4 \uB3C4\uC804\uC774 \uC624\uB354\uB77C\uB3C4 <br/><span class="font-g">\uC624\uC9C1 \uB354 \uB098\uC74C\uC744 \uC704\uD574</span>\uCC3D\uC758\uC801\uC73C\uB85C \uC0DD\uAC01\uD558\uACE0 \uBC1C\uC804\uD574 \uB098\uAC08 \uAC83\uC785\uB2C8\uB2E4.</p>\n                    <span class="dash-bottom line-g"></span>\n                </div>\n            </div>\n            <div class="about-service-box">\n                <span class="dash-bottom"></span>\n                <h4>Service</h4>\n                <div class="service-contents">\n                    <dl class="service-list-1">\n                        <dt>BRANDING</dt>\n                        <dd>Corporate image Art direction</dd>\n                        <dd>Graphic design</dd>\n                        <dd>Interactive design</dd>\n                        <dd>Web and mobile</dd>\n                        <dd>Web app</dd>\n                        <dd>Motion design</dd>\n                    </dl>\n                    <span class="dash-service ser-1"></span>\n                    <dl class="service-list-2">\n                        <dt>STRATEGY</dt>\n                        <dd>Brand strategy</dd>\n                        <dd>Interactive strategy</dd>\n                        <dd>Consultant services and project planning</dd>\n                        <dd>Data analysis</dd>\n                    </dl>\n                    <span class="dash-service ser-2"></span>\n                    <dl class="service-list-3">\n                        <dt>E-COMMERCE</dt>\n                        <dd>Consulting</dd>\n                        <dd>Shopping mall Development</dd>\n                        <dd>Design & marketing</dd>\n                        <dd>System maintenance CRM</dd>\n                        <dd>Market analysis</dd>\n                    </dl>\n                    <span class="dash-service ser-3"></span>\n                    <dl class="service-list-4">\n                        <dt>MARKTING & COMMUNICATIONS</dt>\n                        <dd>Advertising(print, interactive, SNS)</dd>\n                        <dd>Integrated campaigns</dd>\n                        <dd>Promotional campaigns</dd>\n                        <dd>Community management</dd>\n                        <dd>Corporate videos</dd>\n                    </dl>\n                </div>\n            </div>\n            <div class="about-contact-box">\n                <div class="contact-info">\n\n                    <h5>CONTACT</h5>\n                    <p>5TH FLOOR, 9-15, GANGNAM-DAERO 55-GIL,<br />SEOCHO-GU, SEOUL, REPUBLIC OF KOREA</p>\n                    <ul>\n                        <li><p>TEL : 02.501.6172</p></li>\n                        <li><p>FAX : 02.6499.1250</li>\n                    </ul>\n\n                    <a href="https://www.google.co.kr/maps/place/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EC%84%9C%EC%B4%88%EA%B5%AC+%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C55%EA%B8%B8+9-15/@37.4947021,127.0257289,17z/data=!3m1!4b1!4m5!3m4!1s0x357ca15af2cf9b17:0xd1ccf1ba8e2f15a0!8m2!3d37.4947021!4d127.0279176?dcr=0" target="_blank"  class="map-load">MAP</a>\n\n                    <h5 class="none_mb">WORK WITH US</h5>\n                    <a href="mailto:Contact@santelglobal.com" class="email-load">Contact@santelglobal.com</a>\n\n                </div>\n            </div>\n            <div class="about-work-box">\n                <a href="">\n                    <div class="load-box">\n                        <p>Works</p>\n                        <img src="#" alt="#">\n                    </div>\n                    <div class="active-box">\n                        <p>Works</p>\n                        <div class="dir-ani">\n                            <span class="col-line"></span>\n                            <span class="diag-1"></span>\n                            <span class="diag-2"></span>\n                        </div>\n                    </div>\n                </a>\n            </div>\n        ';
 
         return {
             htmlString: htmlString,
