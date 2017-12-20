@@ -466,7 +466,123 @@ var callback = function callback() {
         initVideo('/images/temp/bg2.mp4');
     }, 100);
 };
+/*
+    index 페이지에서 WORKS 페이지로 다이렉트 이동
+    import worksListUI from '../ui/worksList';
 
+    let currentState = undefined;
+    let renderTimer;
+    const rootElem = document.getElementById('contents');
+
+    const getFilteredHash = (str = window.location.hash) => {
+        const hashInfo = {};
+        const arrayToHash = str.replace(/#\/?/,'').split('/');
+
+        if(arrayToHash.length <= 1 && arrayToHash[0] == ''){
+            hashInfo.name = 'index';
+        }else{
+            hashInfo.name = arrayToHash[0];
+            arrayToHash.splice(0,1);
+            hashInfo.params = arrayToHash.length == 0 ? null : arrayToHash;
+        }
+
+<<<<<<< HEAD
+=======
+        return hashInfo;
+    };
+
+    const getObjectByCategory = name => {
+        if(name != undefined){
+            let result;
+            switch(currentState){
+                case 'workslist' :
+                    result = worksListUI;
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
+        }
+    };
+
+    const destroy = () =>{
+        const obj = getObjectByCategory(currentState);
+        if(obj && obj.destroy){
+            obj.destroy();
+        }
+    };
+
+    const setGnbButton = ctgrName => {
+        console.log(ctgrName);
+        let targetElem;
+        switch(ctgrName){
+            case 'workslist' :
+                targetElem = document.getElementById('button-works');
+                break;
+        }
+
+        console.log(targetElem);
+
+        if(targetElem){
+            [...document.querySelectorAll('#button-works')].map(liElem => {
+                liElem.className = '';
+            });
+            targetElem.className = 'active';
+        }
+    };
+
+
+    const render = () => {
+        let renderData;
+        const hashData = getFilteredHash(window.location.hash);
+        // destroy();
+        switch(hashData.name){
+            case 'works' :
+                currentState = 'workslist';
+                renderData = worksListUI.render(ContentsData , hashData);
+                break;
+            default :
+                renderData = {
+                    htmlString : '<div class="error404">유효하지 않은 페이지입니다.</div>'
+                }
+        }
+
+        setGnbButton(currentState);
+        rootElem.innerHTML = renderData.htmlString;
+        if(renderData.callback){
+            renderData.callback();
+        }
+    };
+
+    render();
+
+    window.addEventListener('hashchange' , render);
+
+    (() => {
+
+        [...document.querySelectorAll('#button-works')].map( (elem , index) => {
+            elem.addEventListener('click', event => {
+                const target = event.currentTarget;
+                if(target.parentNode.className.match(/\s?active\s?/)){
+                    return;
+                }
+
+                renderTimer = setTimeout(() => {
+                    destroy();
+                    setTimeout(() => {
+                        currentState = target.dataset.ctgr;
+                        window.location.hash = target.dataset.href;
+                    },200);
+                },550);
+            });
+        });
+
+    })();
+// END, index 페이지에서 WORKS 페이지로 다이렉트 이동
+*/
+
+>>>>>>> ea7cad6fda7c64f291977b1687addce8713c5a80
 var initVideo = function initVideo(videoSrc) {
     var elemVideo = document.createElement('video');
     var elemSource = document.createElement('source');
