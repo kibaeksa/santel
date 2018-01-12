@@ -1,0 +1,401 @@
+
+/* index_main */
+
+@keyframes mainLink{
+    0%{height: 0;}
+    50%{height: 80%;}
+    70%{height: 50%;}
+    100%{height: 100%;}
+}
+
+/* AboutUs page Start */
+
+/* AboutUs Object Start */
+@keyframes objHcirBoxT{
+
+    0%{transform: rotate(45deg);}
+    24%{transform: rotate(45deg);}
+
+    25%{transform: rotate(135deg);}
+    49%{transform: rotate(135deg);}
+
+    50%{transform: rotate(225deg);}
+    74%{transform: rotate(225deg);}
+
+    75%{transform: rotate(315deg);}
+    99%{transform: rotate(315deg);}
+
+    100%{transform: rotate(405deg);}
+}
+
+@keyframes objHcirBoxB{
+
+    0%{transform: rotate(25deg);}
+    24%{transform: rotate(25deg);}
+
+    25%{transform: rotate(115deg);}
+    49%{transform: rotate(115deg);}
+
+    50%{transform: rotate(205deg);}
+    74%{transform: rotate(205deg);}
+
+    75%{transform: rotate(295deg);}
+    99%{transform: rotate(295deg);}
+
+    100%{transform: rotate(3855deg);}
+}
+
+@keyframes objHcircle{
+
+    0%{background-image: url('../images/about/h_circle/h_circle01.png');}
+    2%{background-image: url('../images/about/h_circle/h_circle01.png');}
+
+    3%{background-image: url('../images/about/h_circle/h_circle02.png');}
+    5%{background-image: url('../images/about/h_circle/h_circle02.png');}
+
+    6%{background-image: url('../images/about/h_circle/h_circle03.png');}
+    7%{background-image: url('../images/about/h_circle/h_circle03.png');}
+
+    8%{background-image: url('../images/about/h_circle/h_circle04.png');}
+    10%{background-image: url('../images/about/h_circle/h_circle04.png');}
+
+    11%{background-image: url('../images/about/h_circle/h_circle05.png');}
+    13%{background-image: url('../images/about/h_circle/h_circle05.png');}
+
+    14%{background-image: url('../images/about/h_circle/h_circle06.png');}
+    16%{background-image: url('../images/about/h_circle/h_circle06.png');}
+
+    17%{background-image: url('../images/about/h_circle/h_circle07.png');}
+    19%{background-image: url('../images/about/h_circle/h_circle07.png');}
+
+    20%{background-image: url('../images/about/h_circle/h_circle08.png');}
+    22%{background-image: url('../images/about/h_circle/h_circle08.png');}
+
+    23%{background-image: url('../images/about/h_circle/h_circle09.png');}
+    25%{background-image: url('../images/about/h_circle/h_circle09.png');}
+
+    26%{background-image: url('../images/about/h_circle/h_circle10.png');}
+    28%{background-image: url('../images/about/h_circle/h_circle10.png');}
+
+    29%{background-image: url('../images/about/h_circle/h_circle11.png');}
+    31%{background-image: url('../images/about/h_circle/h_circle11.png');}
+
+    32%{background-image: url('../images/about/h_circle/h_circle12.png');}
+    34%{background-image: url('../images/about/h_circle/h_circle12.png');}
+
+    35%{background-image: url('../images/about/h_circle/h_circle13.png');}
+    37%{background-image: url('../images/about/h_circle/h_circle13.png');}
+
+    38%{background-image: url('../images/about/h_circle/h_circle14.png');}
+    40%{background-image: url('../images/about/h_circle/h_circle14.png');}
+
+    41%{background-image: url('../images/about/h_circle/h_circle15.png');}
+    43%{background-image: url('../images/about/h_circle/h_circle15.png');}
+
+    44%{background-image: url('../images/about/h_circle/h_circle16.png');}
+    46%{background-image: url('../images/about/h_circle/h_circle16.png');}
+
+    47%{background-image: url('../images/about/h_circle/h_circle17.png');}
+    49%{background-image: url('../images/about/h_circle/h_circle17.png');}
+
+    50%{background-image: url('../images/about/h_circle/h_circle18.png');}
+    51%{background-image: url('../images/about/h_circle/h_circle18.png');}
+
+    52%{background-image: url('../images/about/h_circle/h_circle17.png');}
+    54%{background-image: url('../images/about/h_circle/h_circle17.png');}
+
+    55%{background-image: url('../images/about/h_circle/h_circle16.png');}
+    57%{background-image: url('../images/about/h_circle/h_circle16.png');}
+
+    58%{background-image: url('../images/about/h_circle/h_circle15.png');}
+    60%{background-image: url('../images/about/h_circle/h_circle15.png');}
+
+    61%{background-image: url('../images/about/h_circle/h_circle14.png');}
+    63%{background-image: url('../images/about/h_circle/h_circle14.png');}
+
+    64%{background-image: url('../images/about/h_circle/h_circle13.png');}
+    66%{background-image: url('../images/about/h_circle/h_circle13.png');}
+
+    67%{background-image: url('../images/about/h_circle/h_circle12.png');}
+    69%{background-image: url('../images/about/h_circle/h_circle12.png');}
+
+    70%{background-image: url('../images/about/h_circle/h_circle11.png');}
+    72%{background-image: url('../images/about/h_circle/h_circle11.png');}
+
+    73%{background-image: url('../images/about/h_circle/h_circle10.png');}
+    75%{background-image: url('../images/about/h_circle/h_circle10.png');}
+
+    76%{background-image: url('../images/about/h_circle/h_circle09.png');}
+    78%{background-image: url('../images/about/h_circle/h_circle09.png');}
+
+    79%{background-image: url('../images/about/h_circle/h_circle08.png');}
+    81%{background-image: url('../images/about/h_circle/h_circle08.png');}
+
+    82%{background-image: url('../images/about/h_circle/h_circle07.png');}
+    84%{background-image: url('../images/about/h_circle/h_circle07.png');}
+
+    85%{background-image: url('../images/about/h_circle/h_circle06.png');}
+    87%{background-image: url('../images/about/h_circle/h_circle06.png');}
+
+    88%{background-image: url('../images/about/h_circle/h_circle05.png');}
+    90%{background-image: url('../images/about/h_circle/h_circle05.png');}
+
+    91%{background-image: url('../images/about/h_circle/h_circle04.png');}
+    93%{background-image: url('../images/about/h_circle/h_circle04.png');}
+
+    94%{background-image: url('../images/about/h_circle/h_circle03.png');}
+    95%{background-image: url('../images/about/h_circle/h_circle03.png');}
+
+    96%{background-image: url('../images/about/h_circle/h_circle02.png');}
+    97%{background-image: url('../images/about/h_circle/h_circle02.png');}
+
+    98%{background-image: url('../images/about/h_circle/h_circle01.png');}
+    100%{background-image: url('../images/about/h_circle/h_circle01.png');}
+
+}
+
+@keyframes objLongLine{
+
+    0%{height: 30px}
+    50%{height: 60px;}
+    100%{height: 30px}
+
+}
+
+@keyframes objWave{
+
+    0%{background-image: url('../images/about/wave/wave01.png');}
+    49%{background-image: url('../images/about/wave/wave01.png');}
+    50%{background-image: url('../images/about/wave/wave02.png');}
+    99%{background-image: url('../images/about/wave/wave02.png');}
+    100%{background-image: url('../images/about/wave/wave01.png');}
+
+}
+
+@keyframes darkSqu{
+
+    0%{width: 20px; height: 20px;}
+    25%{width: 25px; height: 25px;}
+    50%{width: 20px; height: 20px;}
+    75%{width: 15px; height: 15px;}
+    100%{width: 20px; height: 20px;}
+
+}
+
+@keyframes pointSqu01{
+
+    0%{top: 0; left: 0;}
+    25%{top: 18px; left: 5px;}
+    50%{top: 35px; left: 27px;}
+    75%{top: 15px; left: 34px;}
+    100%{top: 0; left: 0;}
+
+}
+
+@keyframes pointSqu02{
+
+    0%{top: 0; left: 0;}
+    25%{top: 22px; left: -12px;}
+    50%{top: 52px; left: -22px;}
+    75%{top: 23px; left: -42px;}
+    100%{top: 0; left: 0;}
+
+}
+
+@keyframes objQuites{
+
+    0%{background-image: url('../images/about/dou_quotes/mark01.png');}
+    4%{background-image: url('../images/about/dou_quotes/mark01.png');}
+    5%{background-image: url('../images/about/dou_quotes/mark02.png');}
+    9%{background-image: url('../images/about/dou_quotes/mark02.png');}
+    10%{background-image: url('../images/about/dou_quotes/mark03.png');}
+    14%{background-image: url('../images/about/dou_quotes/mark03.png');}
+    15%{background-image: url('../images/about/dou_quotes/mark04.png');}
+    20%{background-image: url('../images/about/dou_quotes/mark04.png');}
+    21%{background-image: url('../images/about/dou_quotes/mark05.png');}
+    26%{background-image: url('../images/about/dou_quotes/mark05.png');}
+    27%{background-image: url('../images/about/dou_quotes/mark06.png');}
+    31%{background-image: url('../images/about/dou_quotes/mark06.png');}
+    32%{background-image: url('../images/about/dou_quotes/mark07.png');}
+    37%{background-image: url('../images/about/dou_quotes/mark07.png');}
+    38%{background-image: url('../images/about/dou_quotes/mark08.png');}
+    42%{background-image: url('../images/about/dou_quotes/mark08.png');}
+    43%{background-image: url('../images/about/dou_quotes/mark09.png');}
+    48%{background-image: url('../images/about/dou_quotes/mark09.png');}
+    49%{background-image: url('../images/about/dou_quotes/mark10.png');}
+    54%{background-image: url('../images/about/dou_quotes/mark10.png');}
+    55%{background-image: url('../images/about/dou_quotes/mark11.png');}
+    60%{background-image: url('../images/about/dou_quotes/mark11.png');}
+    61%{background-image: url('../images/about/dou_quotes/mark12.png');}
+    65%{background-image: url('../images/about/dou_quotes/mark12.png');}
+    66%{background-image: url('../images/about/dou_quotes/mark13.png');}
+    71%{background-image: url('../images/about/dou_quotes/mark13.png');}
+    72%{background-image: url('../images/about/dou_quotes/mark14.png');}
+    77%{background-image: url('../images/about/dou_quotes/mark14.png');}
+    78%{background-image: url('../images/about/dou_quotes/mark15.png');}
+    82%{background-image: url('../images/about/dou_quotes/mark15.png');}
+    83%{background-image: url('../images/about/dou_quotes/mark16.png');}
+    87%{background-image: url('../images/about/dou_quotes/mark16.png');}
+    88%{background-image: url('../images/about/dou_quotes/mark17.png');}
+    93%{background-image: url('../images/about/dou_quotes/mark17.png');}
+    94%{background-image: url('../images/about/dou_quotes/mark18.png');}
+    99%{background-image: url('../images/about/dou_quotes/mark18.png');}
+    100%{background-image: url('../images/about/dou_quotes/mark01.png');}
+
+}
+
+@keyframes objTest{
+    0%{background-image: linear-gradient(180deg, $point_l 100% , $black_d 0%);}
+    6%{background-image: linear-gradient(180deg, $point_l 80% , $black_d 20%);}
+    12%{background-image: linear-gradient(180deg, $point_l 60% , $black_d 40%);}
+    18%{background-image: linear-gradient(180deg, $point_l 40% , $black_d 40%);}
+    24%{background-image: linear-gradient(180deg, $point_l 20% , $black_d 20%);}
+    30%{background-image: linear-gradient(180deg, $point_l 0% , $black_d 00%);}
+    36%{background-image: linear-gradient(180deg, $black_d 100% , $gray 0%);}
+    42%{background-image: linear-gradient(180deg, $black_d 80% , $gray 20%);}
+    48%{background-image: linear-gradient(180deg, $black_d 60% , $gray 40%);}
+    54%{background-image: linear-gradient(180deg, $black_d 40% , $gray 40%);}
+    60%{background-image: linear-gradient(180deg, $black_d 20% , $gray 20%);}
+    66%{background-image: linear-gradient(180deg, $black_d 0% , $gray 00%);}
+    72%{background-image: linear-gradient(180deg, $gray 100% , $point_l 0%);}
+    78%{background-image: linear-gradient(180deg, $gray 80% , $point_l 20%);}
+    84%{background-image: linear-gradient(180deg, $gray 60% , $point_l 40%);}
+    90%{background-image: linear-gradient(180deg, $gray 40% , $point_l 40%);}
+    95%{background-image: linear-gradient(180deg, $gray 20% , $point_l 20%);}
+    100%{background-image: linear-gradient(180deg, $gray 0% , $point_l 00%);}
+}
+
+
+
+@keyframes objHcirLine{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(90deg);}
+    50%{transform: rotate(180deg);}
+    75%{transform: rotate(270deg);}
+    100%{transform: rotate(360deg);}
+}
+/* AboutUs Object END */
+
+/* AboutUs main text Start */
+@keyframes goldGray{
+
+    0%{left: -100%;}
+    25%{left: 30%;}
+    60%{left: 100%;}
+    61%{left: -100%;}
+    100%{left: 0%;}
+
+}
+
+@keyframes visionWhite{
+
+    0%{height: 0;}
+    50%{height: 100px;}
+    100%{height: 100px;}
+
+}
+
+@keyframes visionGold{
+
+    0%{height: 0;}
+    50%{height: 0;}
+    100%{height: 100px;}
+
+}
+
+@keyframes princGold{
+
+    0%{height: 0;}
+    80%{height: 134px;}
+    100%{height: 134px;}
+
+}
+
+@keyframes selectWhite{
+
+    0%{height: 0;}
+    80%{height: 0;}
+    100%{height: 26px;}
+
+}
+/* AboutUs main text END */
+
+/* AboutUs Work Button Start */
+
+// load 시 보여주는 박스 애니메이션 모음
+@keyframes loadHideBox{
+
+    0%{left: 0;}
+    100%{left: 100%;}
+
+}
+
+@keyframes loadShowBox{
+
+    0%{left: 100%;}
+    100%{left: 0;}
+
+}
+
+// active 시 보여주는 화살표 애니메이션 모음
+@keyframes dirboxMoving{
+
+    0%{width: 132px; margin-left: -200px;}
+    50%{width: 202px;}
+    100%{width: 132px; margin-left: 200px;}
+
+}
+
+@keyframes colBox{
+
+    0%{width: 132px;}
+    50%{width: 202px;}
+    100%{width: 132px;}
+
+}
+
+@keyframes col01Moving{
+
+    0%{width: 30px;}
+    50%{width: 100px;}
+    100%{width: 100px;}
+}
+
+@keyframes col02Moving{
+
+    0%{width: 100px; margin-right: 0;}
+    50%{width: 100px;}
+    100%{width: 30px; margin-right: 2px;}
+}
+
+@keyframes dir01Box{
+
+    0%{height: 5px; padding-top: 4px;}
+    50%{height: 5px; padding-top: 4px;}
+    100%{height: 8px; padding-top: 0;}
+
+}
+
+@keyframes dir01Moving{
+
+    0%{width: 5px;}
+    50%{width: 5px;}
+    100%{width: 13px;}
+}
+
+@keyframes dir02Box{
+
+    0%{height: 5px; padding-bottom: 4px;}
+    50%{height: 5px; padding-bottom: 4px;}
+    100%{height: 9px; padding-bottom: 0;}
+
+}
+
+@keyframes dir02Moving{
+
+    0%{width: 5px;}
+    50%{width: 5px;}
+    100%{width: 13px;}
+}
+
+/* AboutUs-detail END */

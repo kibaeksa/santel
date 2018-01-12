@@ -41,6 +41,9 @@ export default {
         if(viewData){
             categoryName = viewData.data.name;
             htmlString += `
+                <style>
+                 #header h1 a{color: #121212;}
+                </style>
                 <div class="work-detail">
                     <div class="container">
                         <div class="header">
@@ -48,10 +51,6 @@ export default {
                             <div class="date">${viewData.data.date}</div>
                         </div>
                         <div class="contents">
-
-                            <div class="view-contents">
-
-                            </div>
 
                             <div class="short-info">
                                 <div class="title">${viewData.data.title}</div>
@@ -78,7 +77,38 @@ export default {
                                 </ul>
                             </div>
                             <!-- short-info END -->
-                            
+
+                            <div class="view-contents">
+
+                            </div>
+
+                            <!--
+                                <div class="short-info">
+                                    <div class="title">${viewData.data.title}</div>
+                                    <div class="description">${viewData.data.description}</div>
+                                    <ul>
+                                        <li>
+                                            <dl>
+                                                <dt>Title</dt>
+                                                <dd>${viewData.data.title}</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>Client</dt>
+                                                <dd>${viewData.data.client ? viewData.data.client : '-'}</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>URL</dt>
+                                                <dd>${viewData.data.url ? `<a href="${viewData.data.url.match(/http:\/\//g) ? viewData.data.url : 'http://'+viewData.data.url }" target="_blank">${viewData.data.url}</a>` : '-'}</dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                -->
+
                         </div>
                         <!-- contents END -->
 
@@ -89,6 +119,10 @@ export default {
                                     <span class="prefix">이전</span>
                                     <div class="article-name">${viewData.index == 0 ? contentsData[contentsData.length-1].name : contentsData[viewData.index-1].name}</div>
                                 </div>
+                            </div>
+
+                            <div class="page-button-wrapper button-center-wrapper">
+                                <a href="/#/works">Works List</a>
                             </div>
 
                             <div class="page-button-wrapper button-right-wrapper">

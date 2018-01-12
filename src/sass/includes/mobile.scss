@@ -193,7 +193,7 @@
             /* header END */
 
             .contents{
-                margin-top: 3rem;
+                margin-top: 0;
                 padding-bottom: 0;
 
                 .view-contents{
@@ -223,6 +223,16 @@
                     .error404{
                         padding: 100px 0;
                     }
+
+                    .detail-text{
+                        font-size: 1.3rem;
+                        line-height: 1.7rem;
+                        word-break: keep-all;
+                    }
+
+                    .detail-img img{
+                        max-width: 100%;
+                    }
                 }
 
                 .short-info{
@@ -231,8 +241,9 @@
                     position: relative;
                     padding-top: 2.5rem;
                     padding-bottom: 2rem;
-                    border-bottom-width: 0;
-                    border-top: 1px solid  #000;
+                    // border-bottom-width: 0;
+                    // border-top: 1px solid  #000;
+                    margin-bottom: 2rem;
 
                     .title{
                         margin-bottom: 1.2rem;
@@ -244,6 +255,7 @@
                         font-size: 1.15rem;
                         line-height: 1.45rem;
                         word-break: keep-all;
+
                     }
 
                     ul{
@@ -251,6 +263,7 @@
                             margin-bottom: 0.7rem;
                         }
                     }
+
                 }
             }
             /* contents END */
@@ -268,5 +281,64 @@
 
     }
     /* work-detail END */
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 950px){
+
+    .about-title-box{
+        h2{
+            height: 70px;
+            @include fontWB(55, 70, center);
+        }
+    }
+
+    .about-intro-box{
+        .article-gold{
+            width: 530px;
+            // height: 720px;
+            margin-top: -130px;
+            margin-left: -430px;
+        }
+        .art-text-box{
+            width: 530px;
+            // height: 720px;
+            margin-top: -140px;
+            margin-left: -480px;
+        }
+    }
+
+    .art-text-box{
+        h3{
+            @include fontWB(65, 70, left);
+
+            // &:nth-child(1){margin-top: 250px;}
+            // &:nth-child(2){margin-top: 320px;}
+            // &:nth-child(3){margin-top: 390px;}
+        }
+    }
+
+    .gold-deco{
+        height: 55px;
+        margin-top: 274px;
+        margin-right: -272px;
+    }
+
+
+
+}
+
+@media screen and (min-width: 951px) and (max-width: 1350px){
+
+    .about-title-box{
+        h2{
+            height: 80px;
+            @include fontWB(65, 80, center);
+        }
+    }
+
+
+
+
 
 }

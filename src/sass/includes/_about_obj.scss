@@ -1,0 +1,240 @@
+
+@import './setting';
+
+.about-object-group{
+
+    div{
+        position: absolute;
+        z-index: 15;
+    }
+
+    .obj-thunder{
+        width: 22px;
+        height: 44px;
+        @include bgi_n_cc();
+        top: 0;
+        left: 50%;
+    }
+
+    .thu-1{
+        background-image: url('../images/about/thunder/thunder_g.png');
+        margin-top: -158px;
+        margin-left: -88px;
+    }
+
+    .thu-2{
+        background-image: url('../images/about/thunder/thunder_b.png');
+        margin-top: -136px;
+        margin-left: -158px;
+    }
+
+    .thu-3{
+        background-image: url('../images/about/thunder/thunder_w12.png');
+        margin-top: -48px;
+        margin-left: -96px;
+    }
+
+    .obj-Hcircle{
+        width: 150px;
+        height: 150px;
+
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .cone{
+            @include custom_d(150, 150);
+            @include bgi_n_cc();
+            background-image: url('../images/about/h_circle/h_circle01.png');
+
+            animation: objHcircle 4s infinite linear;
+        }
+
+        .dash-cir{
+            @include custom_d(60, 60);
+            margin: 44px 46px 46px 44px;
+            border: 2px dashed $white;
+            @include border_R(50%);
+        }
+    }
+
+    .top-hcir{
+        transform: rotate(45deg);
+        top: 0;
+        left: 50%;
+        margin-top: -20px;
+        margin-left: -578px;
+        animation: objHcirBoxT 16s infinite linear;
+    }
+
+    .obj-diagonal{
+        width: 151px;
+        height: 233px;
+        @include bgi_n_cc();
+        background-image: url('../images/about/diagonal.png');
+        top: 0;
+        left: 50%;
+    }
+
+    .dg_left{
+        transform: rotate(90deg);
+        margin-top: -80px;
+        margin-left: 408px;
+    }
+
+    .dg_right{
+        margin-top: 558px;
+        margin-left: -550px;
+    }
+
+    .obj-square{
+        width: 20px;
+        height: 20px;
+        top: 0;
+        left: 50%;
+
+        span{
+            @include custom_d(20, 20);
+        }
+    }
+
+    .squbox-1{
+        transform: rotate(45deg);
+        margin-top: 323px;
+        margin-left: -586px;
+
+        .squ-1{
+            background-color: $black_d;
+            animation: darkSqu 2s infinite linear;
+        }
+    }
+
+    .squbox-2{
+        margin-top: 357px;
+        margin-left: -550px;
+
+        .squ-2{
+            background-color: $point_l;
+            position: absolute;
+            top:0;
+            left: 0;
+            animation: pointSqu01 2s infinite linear;
+        }
+    }
+
+    .obj-long-line{
+        width: 10px;
+        height: 55px;
+        background-color: $gray;
+        @include border_R(5px);
+        top: 0;
+        left: 50%;
+        margin-top: 185px;
+        margin-left: 657px;
+        // animation: objLongLine 1s infinite linear;
+    }
+
+    .obj-wave{
+        width: 64px;
+        height: 17px;
+        @include bgi_n_cc();
+        top: 0;
+        left: 50%;
+        margin-top: 360px;
+        margin-left: 357px;
+        animation: objWave 1s infinite linear;
+    }
+
+    .obj-quites{
+        width: 57px;
+        height: 54px;
+        @include bgi_n_cc();
+        top: 0;
+        left: 50%;
+        margin-top: 546px;
+        margin-left: 304px;
+        animation: objQuites 5s infinite linear;
+    }
+
+    // .obj-test{
+    //     width: 100px;
+    //     height: 50px;
+    //     background-color: $point_l;
+    //     @include fontCB(190, 127, center, transparent);
+    //     -webkit-background-clip: text;
+    //     background-clip: text;
+    //     top: 0;
+    //     left: 50%;
+    //     margin-top: 546px;
+    //     margin-left: 400px;
+    //     font-family: 'Open Sans Condensed';
+    //     animation: objTest 5s infinite linear;
+    // }
+
+    .obj-HcirLine{
+        width: 120px;
+        height: 120px;
+        @include bgi_s(90%, right bottom, no-repeat);
+        background-image: url('../images/about/h_circleline.png');
+        animation: objHcirLine 4s infinite linear;
+        top: 0;
+        left: 50%;
+        margin-top: 920px;
+        margin-left: 314px;
+    }
+
+    .squbox-3{
+        transform: rotate(45deg);
+        margin-top: 1050px;
+        margin-left: 470px;
+
+        .squ-3{
+            background-color: $black_d;
+            animation: darkSqu 2s infinite linear;
+        }
+    }
+
+    .squbox-4{
+        margin-top: 1084px;
+        margin-left: 506px;
+
+        .squ-4{
+            background-color: $point_l;
+            position: absolute;
+            top:0;
+            left: 0;
+            animation: pointSqu02 3s infinite linear;
+        }
+    }
+
+    .thu-4{
+        background-image: url('../images/about/thunder/thunder_d.png');
+        margin-top: 1170px;
+        margin-left: -505px;
+    }
+
+    .thu-5{
+        background-image: url('../images/about/thunder/thunder_g.png');
+        margin-top: 1230px;
+        margin-left: -505px;
+    }
+
+    .thu-6{
+        background-image: url('../images/about/thunder/thunder_b.png');
+        margin-top: 1335px;
+        margin-left: -405px;
+    }
+
+    .bot-hcir{
+        transform: rotate(223deg);
+        top: 0;
+        left: 50%;
+        margin-top: 1620px;
+        margin-left: 506px;
+
+        animation: objHcirBoxB 16s infinite linear;
+    }
+
+}

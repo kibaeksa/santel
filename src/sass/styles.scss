@@ -3,6 +3,7 @@
 @import 'includes/fonts.scss';
 @import 'includes/common.scss';
 @import 'includes/setting';
+@import 'includes/keyframes_set';
 
 html{
     &.inactive-scroll body{
@@ -46,6 +47,7 @@ html{
     left: -100%;
     width: 100%;
     height: 100%;
+    z-index: 19;
     // display: none;
 
     &::after{
@@ -420,10 +422,35 @@ html{
             margin: 55px auto 0;
             border: 1px solid #fff;
             box-sizing: border-box;
-            font-size: 16px;
-            line-height: 48px;
-            text-align: center;
-            color: #fff;
+            position: relative;
+
+            p{
+                @include parent_d();
+                @include fontWB(16, 48, center);
+                font-family: 'Open Sans Condensed';
+                letter-spacing: 1px;
+                position: absolute;
+            }
+
+            div{
+                width: 100%;
+                height: 0;
+                position: absolute;
+                background-color: $white;
+                transform: rotate(180deg) !important;
+            }
+
+            &:hover,&:active{
+                p{
+                    color: $black;
+                    z-index: 3;
+                }
+                div{
+                    animation: mainLink 0.6s 1;
+                    height: 100%;
+                    z-index: 1;
+                }
+            }
         }
 
     }
@@ -567,7 +594,8 @@ html{
         position: absolute;
         top: 50%;
         left: 0;
-        margin-top: -45px;
+        margin-top: 55px;
+        opacity: 0;
     }
 
     p{
@@ -578,17 +606,273 @@ html{
         position: absolute;
         top: 50%;
         left: 0;
-        margin-top: 60px;
+        margin-top: 160px;
+        opacity: 0;
     }
 }
 // .about-title-box END
 
 .about-intro-box{
     width: 100%;
-    height: 100.7vw;//height: 1693px
-    background-color: #739152;
+    height: 1693px;
+    position: relative;
+
+    .about-object-group{
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        // >*{display: none;}
+    }
+
+    .article-gold{
+        width: 640px;
+        height: 0;
+        background-color: $point;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-top: -150px;
+        margin-left: -640px;
+        z-index: 1;
+    }
+
+    .art-text-box{
+        width: 640px;
+        height: 832px;
+        padding-top: 250px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-top: -150px;
+        margin-left: -640px;
+        z-index: 3;
+    }
+
+    .article-vision{
+        width: 640px;
+        height: 0;
+        background-color: $black_d;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-top: 470px;
+        margin-left: -320px;
+        z-index: 1;
+    }
+
+    .vision-dash{
+        @include custom_d(1, 200);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-top: 820px;
+        z-index: 3;
+    }
+
+    .article-principal{
+        width: 640px;
+        height: 480px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-top: 1080px;
+        margin-left: -320px;
+    }
+
+    .principal-dash{
+        @include custom_d(1, 200);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-top: 1559px;
+        z-index: 3;
+    }
+
+    h4{
+        width: 100%;
+        @include fontWB(45, 50, center);
+        font-family: 'Open Sans Condensed';
+    }
+
+    p{
+        width: 100%;
+        margin-bottom: 10px;
+        @include fontWN(15, 22, center);
+        font-family: 'NotoSansKR';
+        letter-spacing: -1px;
+
+        .font-g{
+            @include fontCN(15, 22, center, $point_l);
+        }
+    }
+
+    .dash-bottom{
+        @include custom_d(1, 0);
+        margin: 0 auto;
+    }
+
+    .line-w{
+        background-color: $white;
+    }
+
+    .line-g{
+        background-color: $point;
+    }
+}
+
+// object 모음은 includes/_about_obj.scss 모듈 사용
+@import 'includes/_about_obj';
+
+.art-text-box{
+
+    h3{
+        width: 100%;
+        @include fontWB(75, 90, left);
+        font-family: 'Open Sans Condensed';
+        letter-spacing: 12px;
+        text-indent: 315px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .art-text1{
+        text-indent: 200px;
+        margin-top: 350px;
+    }
+
+    .art-text2{
+        margin-top: 440px;
+    }
+
+    .art-text3{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 530px;
+    }
+
+}
+
+.gold-deco{
+    width: 250px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    margin-top: 306px;
+    margin-right: -140px;
+    z-index: 2;
+    overflow: hidden;
+
+    span{
+        @include parent_d();
+        background-color: $gray;
+        position: absolute;
+        top: 0;
+        left: -100;
+    }
+
+    .act_bgG{
+        animation: goldGray 2s 1;
+        left: 0;
+    }
+}
+
+.article-vision{
+    h4{
+        padding: 195px 0 25px;
+        opacity: 0;
+    }
+
+    p{
+        opacity: 0;
+        padding-top: 50px;
+    }
+
+    p:nth-child(3){padding-bottom: 44px;}
+}
+
+.vision-dash{
+
+    .line-w{
+        height: 0;
+    }
+
+    .line-g{
+        height: 0;
+    }
+
+    &.act_vision{
+        .line-w{
+            animation: visionWhite 2s 1 linear;
+            height: 100px;
+        }
+
+        .line-g{
+            animation: visionGold 2s 1 linear;
+            height: 100px;
+        }
+    }
+}
+
+.article-principal{
+    .obj-quites{
+        @include custom_d(57, 54);
+        margin: 0 auto;
+        @include bgi_n_cc();
+        background-image: url('../images/about/dou_quotes/mark07.png');
+    }
+
+    h4{
+        padding: 100px 0 20px;
+        color: $black;
+        opacity: 0;
+    }
+
+    p{
+        color: $black;
+        padding-top: 50px;
+        opacity: 0;
+    }
+
+    .line-g{
+        margin-top: 67px;
+        height: 0;
+    }
+
+    .act-g{
+        height: 134px;
+        animation: princGold 2s 1 linear;
+    }
 }
 //.about-intro-box END
+
+.principal-dash{
+    .line-g{
+        height: 0;
+    }
+
+    .line-w{
+        height: 0;
+        background-color: $white;
+    }
+
+    &.act_princ{
+
+        .line-g{
+            height: 134px;
+            animation: princGold 2s 1 linear;
+        }
+
+        .line-w{
+            animation: selectWhite 2s 1 linear;
+            height: 26px;
+        }
+    }
+}
 
 .about-service-box{
     width: 100%;
@@ -596,37 +880,59 @@ html{
     background-color: $gray;
     position: relative;
 
-    .dash-bottom{
-        @include custom_d(1, 26);
-        margin: 0 auto;
-        background-color: $white;
-    }
-
     .dash-service{
         @include custom_d(1, 80);
         background-color: #999999;
-        position: absolute;
+        display: block;
+        float: left;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // margin-top: 168px;
+        //
+        // &.ser-1{
+        //     margin-left: 630px
+        // }
+        //
+        // &.ser-2{
+        //     margin-left: 950px
+        // }
+        //
+        // &.ser-3{
+        //     margin-left: 1270px
+        // }
     }
+
     h4{
         width: 100%;
         padding: 60px 0 30px;
         @include fontWB(35, 35, center);
         font-family: 'Open Sans Condensed';
         letter-spacing: 2px;
+        position: absolute;
+        top: 0;
+        margin-top: 26px;
+    }
+
+    .service-contents{
+        width: 1283px;
+        margin: 0 auto;
+        padding-top: 150px;
     }
 
     dl{
         width: 320px;
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: 150px;
+        float: left;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // margin-top: 150px;
 
-        &.service-list-1{margin-left: 310px;}
-        &.service-list-2{margin-left: 630px;}
-        &.service-list-3{margin-left: 950px;}
-        &.service-list-4{margin-left: 1270px;}
+        // &.service-list-1{margin-left: 310px;}
+        // &.service-list-2{margin-left: 630px;}
+        // &.service-list-3{margin-left: 950px;}
+        // &.service-list-4{margin-left: 1270px;}
 
         >*{
             width: 100%;
@@ -712,9 +1018,209 @@ html{
     width: 100%;
     height: 322px;
     background-color: $white;
-}
-//.about-work-box END
 
+    >a{
+        @include parent_d();
+        background-color: #461379;
+        position: relative;
+
+        >div{
+            @include parent_d();
+            position:absolute;
+            top: 0;
+            left: 0;
+        }
+
+        p{
+            width: 280px;
+            position: absolute;
+            font-family: 'Open Sans Condensed';
+            font-style: italic;
+        }
+
+        // 화살표 Object 구현
+        .dir-box{
+            width: 130px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+        }
+
+        span{
+            height: 2px;
+            display: block;
+            float: right;
+        }
+
+        .diag-1{
+            transform: rotate(45deg);
+        }
+
+        .diag-2{
+            transform: rotate(-225deg);
+        }
+
+    }
+
+    // 기본 로드 박스 style
+    .load-box{
+        background-color: $white;
+        z-index: 5;
+
+        p{
+            height: 100%;
+            left: 50%;
+            margin-left: - 140px;
+            @include fontBB(100, 322, center);
+        }
+
+        .dir-box{
+            margin-left: 200px;
+        }
+
+        span{
+            background-color: $black_d;
+        }
+
+        .diag-1{
+            width: 13px;
+            margin-top: 4px;
+        }
+
+        .col-line{
+            width: 129px;
+            transform: rotate(180deg);
+            margin-top: 3px;
+            margin-right: 1px;
+        }
+
+        .diag-2{
+            width: 13px;
+            margin-top: 3px
+        }
+    }
+
+    .load_hide{
+        animation: loadHideBox 1s 1;
+        left: 100%;
+    }
+
+    .load_show{
+        animation: loadShowBox 0.5s 1;
+        left: 0;
+    }
+
+    // 마우스 오버시 active 박스 style
+    .active-box{
+        @include bgi_n_cc();
+        background-image: url('../images/about/top_bgi.jpg');
+
+        .text-over{
+            width: 280px;
+            height: 96px;
+            overflow: hidden;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            margin-top: - 48px;
+            margin-left: -140px;
+
+            p{
+                height: 100%;
+                @include fontWB(100, 96, center);
+                bottom: 0;
+                margin-bottom: -100px;
+            }
+        }
+
+        .dir-box{
+            width: 132px;
+            margin-left: -200px;
+
+            div{width: 100%;}
+            div:nth-child(1){height: 5px; padding-top: 4px;}
+            div:nth-child(2){height: 2px;}
+            div:nth-child(3){height: 5px; padding-bottom: 4px;}
+
+        }
+
+        span{
+            background-color: $white;
+        }
+
+        .diag-1{
+            width: 5px;
+            margin-top: 3px;
+        }
+
+        .col-1{
+            width: 30px;
+            height: 2px;
+            float: left;
+        }
+
+        .col-2{
+            width: 100px;
+            height: 2px;
+            float: left;
+            transform: rotate(180deg);
+        }
+
+        .diag-2{
+            width: 5px;
+        }
+
+        //active class
+        .dir_move{
+            animation: dirboxMoving 1s 1;
+            width: 132px;
+            margin-left: 200px;
+
+            div:nth-child(1){
+                animation: dir01Box 1s 1;
+                height: 8px !important;
+                padding-top: 0 !important;
+            }
+            div:nth-child(2){
+                animation: colBox 1s 1;
+                width: 132px !important;
+            }
+            div:nth-child(3){
+                animation: dir02Box 1s 1;
+                height: 9px;
+                padding-bottom: 0;
+            }
+
+            .diag-1{
+                animation: dir01Moving 1s 1;
+                width: 13px;
+            }
+
+            .col-1{
+                animation: col01Moving 1s 1;
+                width: 100px;
+            }
+
+            .col-2{
+                animation: col02Moving 1s 1;
+                width: 30px;
+                margin-right: 2px;
+            }
+
+            .diag-2{
+                animation: dir02Moving 1s 1;
+                width: 13px;
+                margin-top: 2px;
+            }
+        }
+
+    }
+
+}
+
+//.about-work-box END
 /* AboutUs-detail END */
 
 
@@ -810,6 +1316,7 @@ html{
                             a{
                                 font:300 12px/15px 'NotoSansKR';
                                 color: #666;
+                                text-decoration: underline;
                             }
                         }
                     }
@@ -842,10 +1349,20 @@ html{
                 letter-spacing: -0.25px;
             }
 
-            .description{
-                font:300 14px/24px 'Noto Sans KR';
-                color: #666;
+            .description{}
+
+            .detail-text{
+                font:300 14px/20px 'Noto Sans KR';
                 letter-spacing: -0.25px;
+                color: #666;
+            }
+
+            .detail-img{
+                padding-top: 60px;
+
+                img{
+                    display: block;
+                }
             }
 
             .no-contents{
@@ -1046,13 +1563,35 @@ html{
             }
             // &.button-right-wrapper END
 
+            &.button-center-wrapper{
+                width: 150px;
+                height: 60px;
+                bottom: 0;
+                left: 50%;
+                margin-left: -75px;
+
+                a{
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    font: 300 17px/60px 'Noto Sans KR';
+                    text-align: center;
+                    color: $gray;
+
+                    &:hover{
+                        color: $gray_f;
+                    }
+                }
+            }
+            // &.button-center-wrapper END
         }
         /* .page-button-wrapper END */
 
         .page-number-wrapper{
             width: 100%;
             position: absolute;
-            bottom: 17px;
+            // bottom: 17px;
+            bottom: -20px;
             left: 0;
             text-align: center;
 
@@ -1060,7 +1599,7 @@ html{
                 display: inline-block;
 
                 *{
-                    font:300 20px/20px 'Brandon';
+                    font:300 15px/20px 'Brandon';
                 }
 
                 span{

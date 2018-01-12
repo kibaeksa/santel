@@ -69,7 +69,10 @@ export default {
                     <h2 class="pc-ver">WE MAKE SUCCESSFUL DIGITAL<br />STORIES FOR WEB &amp; MOBILE</h2>
                     <h2 class="tab-ver">WE MAKE<br />SUCCESSFUL DIGITAL<br />STORIES FOR<br /> WEB &amp; MOBILE</h2>
                     <h2 class="mob-ver">WE MAKE<br /> SUCCESSFUL<br /> DIGITAL<br />STORIES FOR<br /> WEB &amp;<br /> MOBILE</h2>
-                    <a href="/#/works" data-href="/works" data-ctgr="workslist" id="button-works">OUR WORKS</a>
+                    <a href="/#/works" data-href="/works" data-ctgr="workslist" id="button-works">
+                        <p>OUR WORKS</p>
+                        <div></div>
+                    </a>
                 </div>
             </div>
         `;
