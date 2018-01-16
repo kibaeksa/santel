@@ -10,7 +10,7 @@ $gray_f  : #666666;
 // font setting
 @mixin fontBN($s, $h, $t){
     font-size: $s + px;
-    font-weight: normal;
+    font-weight: 300;
     line-height: $h + px;
     text-align: $t;
     color: $black;
@@ -28,7 +28,7 @@ $gray_f  : #666666;
 
 @mixin fontWN($s, $h, $t){
     font-size: $s + px;
-    font-weight: normal;
+    font-weight: 300;
     line-height: $h + px;
     text-align: $t;
     color: $white;
@@ -46,7 +46,7 @@ $gray_f  : #666666;
 
 @mixin fontCN($s, $h, $t, $c){
     font-size: $s + px;
-    font-weight: normal;
+    font-weight: 300;
     line-height: $h + px;
     text-align: $t;
     color: $c;

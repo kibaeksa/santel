@@ -70,7 +70,6 @@ const setGnbButton = ctgrName => {
             targetElem = document.getElementById('gnb-button-works');
             break;
         case 'about' :
-            console.log(11);
             targetElem = document.getElementById('gnb-button-about');
             break;
         case 'culture' :
@@ -109,6 +108,7 @@ const render = () => {
             break;
         case 'culture' :
             currentState = 'culture';
+            renderData = cultureUI.render(ContentsData);
             break;
         case 'index' :
             currentState = 'index';
@@ -158,7 +158,11 @@ const handleGlobalNav = () => {
         elem.addEventListener('click', event => {
             const target = event.currentTarget;
             if(target.parentNode.className.match(/\s?active\s?/)){
-                return;
+                document.getElementsByTagName('html')[0].classList.remove('nav-open','inactive-scroll');
+                document.getElementById('gnb-menu').classList.remove('open');
+                document.querySelector('#header .gnb-menu-button').classList.remove('open');
+                // isOpenGnb = false;
+                // return;
             }
 
             setGnbButton(target.dataset.ctgr);
@@ -169,7 +173,7 @@ const handleGlobalNav = () => {
             document.querySelector('#header .gnb-menu-button').classList.remove('open');
 
             renderTimer = setTimeout(() => {
-                destroy();
+                // destroy();
                 setTimeout(() => {
                     currentState = target.dataset.ctgr;
                     window.location.hash = target.dataset.href;

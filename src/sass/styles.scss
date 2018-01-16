@@ -1,6 +1,9 @@
 
 @import 'includes/reset.scss';
 @import 'includes/fonts.scss';
+// @import 'includes/notosans';
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import 'includes/common.scss';
 @import 'includes/setting';
 @import 'includes/keyframes_set';
@@ -388,21 +391,23 @@ html{
             width: 100%;
             height: auto;
             font-family: 'Open Sans Condensed';
-            font-size: 16px;
-            line-height: 20px;
+            font-size: 22px;
+            line-height: 22px;
             text-align: center;
             color: #fff;
+            letter-spacing: 2px;
         }
 
         h2{
             width: 100%;
             height: auto;
             font-family: 'Open Sans';
-            font-size: 42px;
+            font-size: 60px;
             font-weight: bold;
-            line-height: 50px;
+            line-height: 60px;
             text-align: center;
             color: #fff;
+            letter-spacing: 3px;
 
             &.pc-ver{
                 display: block;
@@ -421,12 +426,11 @@ html{
             display: block;
             margin: 55px auto 0;
             border: 1px solid #fff;
-            box-sizing: border-box;
             position: relative;
 
             p{
                 @include parent_d();
-                @include fontWB(16, 48, center);
+                @include fontWB(20, 50, center);
                 font-family: 'Open Sans Condensed';
                 letter-spacing: 1px;
                 position: absolute;
@@ -554,7 +558,7 @@ html{
             h3{
                 margin-bottom: 12px;
                 color: #000;
-                font:300 16px/16px 'Noto Sans KR';
+                font:300 17px/17px 'Noto Sans KR';
             }
 
             .date{
@@ -1244,7 +1248,7 @@ html{
         }
 
         >.date{
-            font:300 12px/12px 'Open Sans';
+            font:300 17px/17px 'Open Sans';
         }
     }
 
@@ -1344,7 +1348,9 @@ html{
 
             .title{
                 margin-bottom: 35px;
-                font:300 24px/32px 'Noto Sans KR';
+                // font:300 24px/32px 'Noto Sans KR';
+                font-family:'Noto Sans KR';
+                @include fontCN(24, 32, left, #000);
                 color: #000;
                 letter-spacing: -0.25px;
             }
@@ -1352,9 +1358,9 @@ html{
             .description{}
 
             .detail-text{
-                font:300 14px/20px 'Noto Sans KR';
-                letter-spacing: -0.25px;
-                color: #666;
+                font-family:'noto sans kr';
+                @include fontCN(14, 20, left, #666);
+                letter-spacing: -0.5px;
             }
 
             .detail-img{
@@ -1590,8 +1596,8 @@ html{
         .page-number-wrapper{
             width: 100%;
             position: absolute;
-            // bottom: 17px;
-            bottom: -20px;
+            bottom: 17px;
+            // bottom: -20px;
             left: 0;
             text-align: center;
 
@@ -1638,6 +1644,21 @@ html{
 }
 /* work-detail END */
 
+/* culture START */
+.culture{
+    h2{
+        width: 100%;
+        height: auto;
+        @include fontBB(30, 40, center);
+        margin: 40px 0;
+    }
+    p{
+        width: 100%;
+        height: auto;
+        @include fontBB(15, 20, center);
+    }
+}
+/* culture END */
 
 /* footer START */
 #footer{

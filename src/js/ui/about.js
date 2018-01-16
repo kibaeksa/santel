@@ -1,7 +1,7 @@
 const callback = () => {
     console.log('callback');
 
-    // Main Title Text load effect
+    // Main Title Text 로드시 순차적 보여주기 효과
     function mainTitleLoad(mainTop, subTop){
         var $aboutMainTitle = $('.about-title-box'),
             $mainTitle = $aboutMainTitle.children('h2'),
@@ -16,8 +16,19 @@ const callback = () => {
 
             var scrollT = $(window).scrollTop();
 
+            //scroll시 object parallax 효과
+            $('.thu-1').css({top: 0-(scrollT * 0.2) });
+            $('.thu-2').css({top: 0-(scrollT * 0.3) });
+            $('.thu-3').css({top: 0-(scrollT * 0.25) });
+
+            $('.top-hcir').css({top: 0-(scrollT * 0.15) });
+
+            $('.dg_left').css({top: 0-(scrollT * 0.35) });
+            $('.dg_right').css({top: 0-(scrollT * 0.25) });
+
+            // scroll시 하단 컨텐츠 해당 높이 값에 도달할 경우 보여주기 효과
             var aboutMainH = $('.about-title-box').height(),
-                scr01 = aboutMainH - 550,
+                scr01 = aboutMainH - 750,
                 scr02 = aboutMainH - 50,
                 scr03 = aboutMainH + 700;
 

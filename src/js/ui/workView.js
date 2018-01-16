@@ -52,6 +52,40 @@ export default {
                         </div>
                         <div class="contents">
 
+
+                        <!--
+                            <div class="short-info">
+                                <div class="title">${viewData.data.title}</div>
+                                <div class="description">${viewData.data.description}</div>
+                                <ul>
+                                    <li>
+                                        <dl>
+                                            <dt>TITLE</dt>
+                                            <dd>${viewData.data.title}</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>CLIEN</dt>
+                                            <dd>${viewData.data.client ? viewData.data.client : '-'}</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>URL</dt>
+                                            <dd>${viewData.data.url ? `<a href="${viewData.data.url.match(/http:\/\//g) ? viewData.data.url : 'http://'+viewData.data.url }" target="_blank">${viewData.data.url}</a>` : '-'}</dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            -->
+
+
+                            <div class="view-contents">
+
+                            </div>
+
                             <div class="short-info">
                                 <div class="title">${viewData.data.title}</div>
                                 <div class="description">${viewData.data.description}</div>
@@ -78,37 +112,6 @@ export default {
                             </div>
                             <!-- short-info END -->
 
-                            <div class="view-contents">
-
-                            </div>
-
-                            <!--
-                                <div class="short-info">
-                                    <div class="title">${viewData.data.title}</div>
-                                    <div class="description">${viewData.data.description}</div>
-                                    <ul>
-                                        <li>
-                                            <dl>
-                                                <dt>Title</dt>
-                                                <dd>${viewData.data.title}</dd>
-                                            </dl>
-                                        </li>
-                                        <li>
-                                            <dl>
-                                                <dt>Client</dt>
-                                                <dd>${viewData.data.client ? viewData.data.client : '-'}</dd>
-                                            </dl>
-                                        </li>
-                                        <li>
-                                            <dl>
-                                                <dt>URL</dt>
-                                                <dd>${viewData.data.url ? `<a href="${viewData.data.url.match(/http:\/\//g) ? viewData.data.url : 'http://'+viewData.data.url }" target="_blank">${viewData.data.url}</a>` : '-'}</dd>
-                                            </dl>
-                                        </li>
-                                    </ul>
-                                </div>
-                                -->
-
                         </div>
                         <!-- contents END -->
 
@@ -121,9 +124,11 @@ export default {
                                 </div>
                             </div>
 
+                            <!--
                             <div class="page-button-wrapper button-center-wrapper">
                                 <a href="/#/works">Works List</a>
                             </div>
+                            -->
 
                             <div class="page-button-wrapper button-right-wrapper">
                                 <a href="/#/works/${viewData.index == contentsData.length-1 ? Utils.getNameToLink(contentsData[0].name) : Utils.getNameToLink(contentsData[viewData.index+1].name)}" class="page-button" data-test="${viewData.index == contentsData.length-1}"></a>

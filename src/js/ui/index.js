@@ -16,7 +16,7 @@ const callback = () => {
     setTimeout(() => {
         document.getElementsByTagName('html')[0].classList.add('main-page');
         document.querySelector('.main').classList.add('loaded');
-        initVideo('/images/temp/bg2.mp4');
+        initVideo('/images/temp/intro.mp4');
     },100);
 
 };
@@ -59,7 +59,7 @@ export default {
                 <div id="main-video" style="width:${window.innerWidth}px;height:${window.innerHeight}px;">
                     <div>
                         <video autoplay="" muted="" style="position:absolute;top:50%;">
-                            <source src="https://monopo.co.jp/wp-content/themes/monopo/video/bg2.mp4" type="video/mp4">
+                            <source src="https://monopo.co.jp/wp-content/themes/monopo/video/index.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>

@@ -23,13 +23,13 @@
     }
 
     .thu-2{
-        background-image: url('../images/about/thunder/thunder_b.png');
+        background-image: url('../images/about/thunder/thunder_W12.png');
         margin-top: -136px;
         margin-left: -158px;
     }
 
     .thu-3{
-        background-image: url('../images/about/thunder/thunder_w12.png');
+        background-image: url('../images/about/thunder/thunder_b.png');
         margin-top: -48px;
         margin-left: -96px;
     }
@@ -49,7 +49,7 @@
             @include bgi_n_cc();
             background-image: url('../images/about/h_circle/h_circle01.png');
 
-            animation: objHcircle 4s infinite linear;
+            // animation: objHcircle 4s infinite linear;
         }
 
         .dash-cir{
@@ -66,7 +66,7 @@
         left: 50%;
         margin-top: -20px;
         margin-left: -578px;
-        animation: objHcirBoxT 16s infinite linear;
+        // animation: objHcirBoxT 16s infinite linear;
     }
 
     .obj-diagonal{
@@ -107,7 +107,7 @@
 
         .squ-1{
             background-color: $black_d;
-            animation: darkSqu 2s infinite linear;
+            // animation: darkSqu 2s infinite linear;
         }
     }
 
@@ -120,7 +120,7 @@
             position: absolute;
             top:0;
             left: 0;
-            animation: pointSqu01 2s infinite linear;
+            // animation: pointSqu01 2s infinite linear;
         }
     }
 
@@ -144,7 +144,8 @@
         left: 50%;
         margin-top: 360px;
         margin-left: 357px;
-        animation: objWave 1s infinite linear;
+        background-image: url('../images/about/wave/wave02.png');
+        // animation: objWave 1s infinite linear;
     }
 
     .obj-quites{
@@ -155,7 +156,7 @@
         left: 50%;
         margin-top: 546px;
         margin-left: 304px;
-        animation: objQuites 5s infinite linear;
+        // animation: objQuites 5s infinite linear;
     }
 
     // .obj-test{
@@ -178,7 +179,7 @@
         height: 120px;
         @include bgi_s(90%, right bottom, no-repeat);
         background-image: url('../images/about/h_circleline.png');
-        animation: objHcirLine 4s infinite linear;
+        // animation: objHcirLine 4s infinite linear;
         top: 0;
         left: 50%;
         margin-top: 920px;
@@ -192,7 +193,7 @@
 
         .squ-3{
             background-color: $black_d;
-            animation: darkSqu 2s infinite linear;
+            // animation: darkSqu 2s infinite linear;
         }
     }
 
@@ -205,7 +206,7 @@
             position: absolute;
             top:0;
             left: 0;
-            animation: pointSqu02 3s infinite linear;
+            // animation: pointSqu02 3s infinite linear;
         }
     }
 
@@ -234,7 +235,7 @@
         margin-top: 1620px;
         margin-left: 506px;
 
-        animation: objHcirBoxB 16s infinite linear;
+        // animation: objHcirBoxB 16s infinite linear;
     }
 
 }
