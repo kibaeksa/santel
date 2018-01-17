@@ -109,12 +109,6 @@ export default [
         description : '글로벌 대표 화장품 회사 로레알의 헤어 전문 브랜드인 로레알 프로페셔널 파리 사이트의 공식 온라인 스토어 신규 구축 및 운영',
         client : '엘오케이(유)',
         url : 'shop.modshairloreal.com',
-        // url : {
-        //     '차홍' : 'shop.chahongloreal.com',
-        //     '순시키' : 'shop.soonsikiloreal.com',
-        //     '쌤시크' : 'shop.samchicloreal.com',
-        //     '모즈헤어' : 'shop.modshairloreal.com'
-        // },
         thumbnails : {
             publicPath : '/images/thumb/07_loear_EC/',
             imgList : [

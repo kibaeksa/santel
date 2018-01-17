@@ -1,5 +1,4 @@
 const callback = () => {
-    console.log('callback');
 
     // Main Title Text 로드시 순차적 보여주기 효과
     function mainTitleLoad(mainTop, subTop){
@@ -145,10 +144,6 @@ const callback = () => {
         pcScrollingEffect(832, 450);
 
     }
-
-    console.log(winW);
-
-
 
 };
 

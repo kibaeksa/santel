@@ -161,8 +161,6 @@ const handleGlobalNav = () => {
                 document.getElementsByTagName('html')[0].classList.remove('nav-open','inactive-scroll');
                 document.getElementById('gnb-menu').classList.remove('open');
                 document.querySelector('#header .gnb-menu-button').classList.remove('open');
-                // isOpenGnb = false;
-                // return;
             }
 
             setGnbButton(target.dataset.ctgr);

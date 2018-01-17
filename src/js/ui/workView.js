@@ -52,36 +52,6 @@ export default {
                         </div>
                         <div class="contents">
 
-
-                        <!--
-                            <div class="short-info">
-                                <div class="title">${viewData.data.title}</div>
-                                <div class="description">${viewData.data.description}</div>
-                                <ul>
-                                    <li>
-                                        <dl>
-                                            <dt>TITLE</dt>
-                                            <dd>${viewData.data.title}</dd>
-                                        </dl>
-                                    </li>
-                                    <li>
-                                        <dl>
-                                            <dt>CLIEN</dt>
-                                            <dd>${viewData.data.client ? viewData.data.client : '-'}</dd>
-                                        </dl>
-                                    </li>
-                                    <li>
-                                        <dl>
-                                            <dt>URL</dt>
-                                            <dd>${viewData.data.url ? `<a href="${viewData.data.url.match(/http:\/\//g) ? viewData.data.url : 'http://'+viewData.data.url }" target="_blank">${viewData.data.url}</a>` : '-'}</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            -->
-
-
                             <div class="view-contents">
 
                             </div>

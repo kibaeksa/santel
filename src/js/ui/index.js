@@ -3,8 +3,6 @@ const callback = () => {
     const mainTextBox = document.getElementById('main-text');
     const mainTextHeight = mainTextBox.clientHeight;
 
-    console.log(mainTextHeight);
-
     mainTextBox.style.marginTop = -mainTextHeight / 2 +'px'
 
     window.addEventListener('resize' , event => {

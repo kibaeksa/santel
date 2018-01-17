@@ -61,7 +61,7 @@ export default {
         /* List */
         htmlString = `
             <style>
-             #header h1 a{color: #121212;}
+             #header h1 a{color: #121212 !important;}
             </style>
             <div class="items-wrapper container clearfix">
                 <h2>RECENT WORK</h2>
